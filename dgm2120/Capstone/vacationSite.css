@@ -1,0 +1,401 @@
+/* CSS reset */
+body, p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+} 
+
+/* box model fix */
+* { -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; }
+
+/* BODY */
+body {
+    color: #3A1E00;
+	background-image: url(images/backGrad.png);
+	background-repeat: repeat-x;
+    background-color: #FFF1C4;
+    font-size: 16px;
+}
+
+/* WRAPPER */
+div#wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+    box-shadow: 0px 0px 10px #777;
+}
+
+div#package {
+    margin: 0 auto;
+    min-height: 500px;
+    border: solid 1px #70CEE8;
+    border-radius: .6rem;
+    padding: 1rem;
+    margin: 1rem;    
+}
+
+/* HEADER */
+header {
+    background-color: #70CEE8;
+    background-repeat: repeat-x;
+    background-position: 2% 1rem;
+}
+header h1 {
+    padding: 2rem 0 0 10%;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+header h2 { 
+    padding: 1.5rem 0  2rem 15%;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #FFF1C4;
+    text-shadow: 0px 0px 15px white;
+}
+
+/* NAVIGATION */
+
+/* phone nav */
+@media only screen and (max-width: 600px) {
+     nav {
+         background-color: #FFF1C4;
+         padding: 2px 2%;
+         font-family: 'Alegreya Sans', sans-serif;
+         font-weight: 800;
+         text-align: center;
+    }
+    nav ul.menu {
+        list-style-type: none;
+        padding: 0;
+    }
+    nav ul.menu li a {
+        padding: .2rem 1rem;
+        margin-bottom: .5rem;
+        background-color: #70E8C0;
+        text-decoration: none;
+        display: block;
+        border: solid 2px white;
+        border-radius: .5rem;
+        color: white;
+    }
+    nav ul.menu li a:hover {
+	   background-color: #2A4D76; 
+	}
+	nav ul.menu li.active a {
+		background-color: white;	
+        color: #70E8C0;
+	}
+}
+/* end phone nav */
+
+/*desktop nav*/
+@media only screen and (min-width: 601px) {
+	nav {
+		/*background: linear-gradient(to bottom,  #994f00 0%,#3A1E00 100%);*/
+        background-color: #70E8C0;
+		border-top: 4px solid #FFF1C4;
+        border-bottom: 4px solid #FFF1C4;
+        font-family: 'Alegreya Sans', sans-serif;
+        font-weight: 800;
+        background-repeat: repeat-x;
+	}
+	nav ul.menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	nav ul.menu li {
+		float: left;
+        background-image: url(images/button.jpg);
+	}
+	nav ul.menu li a {
+		display: block;
+        padding: 1rem 1.5rem;
+        color: white;
+        text-decoration: none;
+        border-right: solid 2px #FFF1C4;
+        border-left: solid 2px #FFF1C4;
+        font-weight: 600;
+        font-size: 1.1rem;
+	}
+	nav ul.menu li a:hover {
+	   background-color: #2A4D76; 
+	}
+    nav ul.menu li.active a {
+        background-color: white;	
+        color: #70E8C0;
+	}
+}
+/* end desktop nav*/
+
+/* MAIN */
+main {
+    padding: 1.5rem 3%;
+    background-color: white;
+}
+main h1 {
+    font-size: 2.5rem;
+    color: #2A4D76;
+    border-bottom: 1px solid #2A4D76;
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    font-family: 'Dancing Script', cursive;
+}
+main h2 {
+    padding-bottom: .5rem;
+    font-size: 1.7rem;
+    color: #70CEE8;
+    border-bottom: 1px solid #70CEE8;
+    margin-bottom: .5rem;
+    font-family: 'Dancing Script', cursive;
+}
+main p {
+    padding-bottom: 1rem;
+    line-height: 160%;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: grey;
+}
+
+main p.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 100%;
+    color: #70CEE8;
+}
+
+main blockquote {
+    font-style: italic;
+    margin: 1rem 6%;
+    font-size: 1.2rem;
+    font-family: 'Dancing Script', cursive;
+}
+main a {
+    color: #7EEDE8;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+main a:hover {
+    color: #FFF1C4;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+/* map */
+iframe.myMap {
+    border: 1px solid #3A1E00;
+    width: 96%;
+    margin-left: 2%;
+    height: 500px;
+}
+
+/* table */
+table.hours {
+    border-collapse: collapse;
+    font-size: .9rem;
+    border: 1px solid #3A1E00;
+    margin: 0 1% 1rem 1%;
+}
+table.hours th {
+    text-align: left;
+    background-color: #EFA045;
+    color: white;
+    font-size: 1.5rem;
+    padding: .1rem .5rem;
+}
+table.hours td {
+    padding: .5rem;
+}
+table.hours tr:nth-child(even) {
+   background-color: #A5CBD6;
+}
+table.hours tr:hover {
+    background-color: #3A1E00;
+    color: white;
+}
+
+/* youtube video */
+iframe.video {
+    width: 98%;
+    margin-left: 1%;
+    height: 400px;
+    margin-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* IMAGES */
+figure.rightSide {
+    float: right;
+    width: 30%;
+    border: solid 1px #2A4D76;
+    margin: 0 0 .3rem 2%;
+    box-shadow: 0px 0px 10px #777;
+}
+
+figure.rightSide img {
+    width: 100%;
+    padding: 5% 5% 0 5%;
+}
+
+figure.leftSide {
+    float: left;
+    height: 400px;
+    width: 210px;
+    border: solid 1px #2A4D76;
+    margin: .5rem 1rem .5rem 2%;
+    box-shadow: 0px 0px 10px #777;
+}
+
+figure.leftSide img {
+    width: 100%;
+    padding: 5% 5% 5% 5%;
+}
+
+figure.rightSide figcaption {
+    text-align: center;
+    font-size: .75rem;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: lightgrey;
+}
+
+
+figure.destinations {
+    float: left;
+    padding-top: 10px;
+    border: 1px solid #2A4D76;
+    text-align: center;
+    height: 350px;
+    width: 210px;
+    margin: 2.5rem;
+    background-color: white;
+}
+
+figure.destinations img {
+    border: 1px solid #2A4D76;
+    width: 90%;
+}
+
+figure.destinations figcaption {
+    font-size: .8rem;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: grey;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+}
+
+figure.destinations figcaption span {
+    display: block;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #70CEE8;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+}
+
+/* LISTS */
+main ul {
+    margin: 0 0 1rem 0;
+    padding: 0 0 0 3rem;
+    list-style-image: url(images/check.png);
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #2A4D76;    
+}
+main ul li {
+    padding: 0 0 0 .5rem;
+    margin-bottom: .3rem;
+}
+main ol {
+    margin: 0 0 1rem 0;
+    padding: 0 0 0 3rem;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #2A4D76;
+}
+main dl dt, main dl dd {
+    margin: 0;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: grey;
+}
+main dl dt {
+    padding: 0 0 .5rem 1rem;
+    font-weight: 600;
+}
+main dl dd {
+    padding: 0 0 .75rem 2rem;
+}
+
+/* FORM */
+form.suggestions fieldset {
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    border: 1px solid #70E8C0;
+    color: #2A4D76;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+form.suggestions legend {
+    font-weight: 600;
+    margin-left: 1rem;
+    color: #70CEE8;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+
+form.suggestions span {
+    display: block;
+    padding: .8rem 0 0 .3rem;
+}
+
+form.suggestions .userInfo {
+    color: #2A4D76;
+    padding: .5rem;
+    width: 20rem;
+    border: solid 1px #70CEE8;
+    border-radius: .6rem;
+    background-color: white;
+}
+
+form.suggestions .userButton {
+    width: 20rem;
+    padding: 1rem;
+    margin-left: 2%;
+    background: #70E8C0;
+    color: white;
+    border: solid 1px #2A4D76;
+    border-radius: .6rem;
+}
+
+/* FOOTER */
+footer {
+    background-color: #70CEE8;
+}
+footer p {
+    text-align: center;
+    padding: 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: .4rem;
+    color: white;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+/* OTHER */
+div.keepOpen {
+clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

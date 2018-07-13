@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="vacationSite.css">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Dancing+Script" rel="stylesheet">
+<title>Contact Us</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1, max-scale=1">
+</head>
+
+<body>
+    <div id="wrapper">
+<!-- Start of the header -->
+<header>
+       <h1>Destination: Caribbean</h1>
+    <h2>Come explore with us!</h2>
+    
+</header> 
+    
+<!-- Start of the navigation -->
+<nav>
+    <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li class="active"><a href="contactUs.html">Contact Us</a></li>
+    </ul>
+    <div class="keepOpen"></div>  
+</nav>
+    
+<!-- Start of the main content -->
+<main>
+    <h1>Contact Us</h1>
+    <form action="FormToEmail.php" method="POST" enctype="multipart/form-data" name="receive" class="suggestions">
+        
+        <fieldset>
+        <legend>Personal Info</legend>
+            <label><span>First Name: </span> <input type="text" name="firstName" placeholder="your name here" required class="userInfo"></label>
+            
+            <label><span>Last Name: </span> <input type="text" name="lastName" placeholder="your name here" required class="userInfo"></label>
+            
+            <label><span>Email:</span> <input type="email" name="email" placeholder="email@gmail.com" required class="userInfo"></label>
+           
+            <label><span>Phone:</span> <input type="tel" name="phone" placeholder="(555)-555-5555" required pattern="[0-9-. ()]{10, 14}" class="userInfo"></label> 
+        </fieldset>
+        
+        <fieldset>
+        <legend>Package</legend> 
+            <span>Select one of the following packages or <a href="#designPackage">design your own package</a></span>
+            
+            <label><span>Package: </span>
+                <select name="package" class="userInfo">
+                <option value="1">The Puerto Rican</option>
+                <option value="2">The Dominican</option>
+                <option value="3">The Island Hopper</option>
+                </select>    
+            </label>
+            
+            <label><span>Trip Date: </span>
+                <input type="date" name="date" class="userInfo"></label> 
+        </fieldset>
+        
+        <fieldset>
+        <legend id="designPackage">Design Your Own Package</legend>      
+            <span>Location(s) </span>
+            <label><input type="checkbox" name="requestedLocation" value="Aruba">Aruba</label><br>
+            <label><input type="checkbox" name="requestedLocation" value="Barbados">Barbados</label><br>
+            <label><input type="checkbox" name="requestedLocation" value="Culebra">Culebra</label><br>
+            <label><input type="checkbox" name="requestedLocation" value="Old San Juan">Old San Juan</label><br>
+            <label><input type="checkbox" name="requestedLocation" value="Punta Cana">Punta Cana</label><br>
+            <label><input type="checkbox" name="requestedLocation" value="San Martín">San Martín</label><br>
+            <label><input type="checkbox" name="requestedLocation" value="Saona">Saona</label><br>
+            <label><input type="checkbox" name="requestedLocation" value="US Virgin Islands">US Virgin Islands</label><br>
+            <label><input type="checkbox" name="requestedLocation" value="Other">Other</label>
+            
+            <label><span>If other, please specify: </span> <input type="text" name="otherSuggestion" placeholder="name of location" class="userInfo"></label>   
+        
+            <span>Length of stay: </span>
+            <label><input type="radio" name="stayLength" value="1-2 days">1-2 days</label><br>
+            <label><input type="radio" name="stayLength" value="3-4 days">3-5 days</label><br>
+            <label><input type="radio" name="stayLength" value="5-6 days">5-6 days</label><br>
+            <label><input type="radio"
+            name="stayLength" value="1 week">1 week</label><br>
+            <label><input type="radio"
+            name="stayLength" value="2 weeks">2 weeks</label><br>
+            
+            <label><span>If other, please specify: </span> <input type="text" name="otherLength" placeholder="length of stay" class="userInfo"></label>
+            
+            <label><span>Hotel Name: </span> <input type="text" name="hotelName" placeholder="name of hotel" class="userInfo"></label>
+            
+            <label><span>Hotel Website: </span> <input type="url" name="hotelURL" placeholder="http://example.com" class="userInfo"></label>
+            
+            <label><span>Trip Date: </span>
+                <input type="date" name="date" class="userInfo"></label>
+        </fieldset>
+            
+        <fieldset>
+        <span>Any additional comments:</span><textarea name="comments" class="userInfo"></textarea>
+        </fieldset>
+        
+        <input type="submit" name="submit" value="Submit" class="userButton">
+        
+        <input type="hidden" name="subject" value="Contact Us">
+        
+        <input type="hidden" name="redirect" value="thanks.html">
+    
+    </form>    
+</main>
+    
+<!-- Start of the footer -->
+<footer>
+    <p>&copy; Nov. 27, 2017 &bull; heatherhyer.com &bull; Built by Heather Hyer &bull;</p>
+</footer>
+    </div> <!-- end wrapper -->
+</body>
+</html>
