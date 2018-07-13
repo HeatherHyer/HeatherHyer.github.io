@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* CSS reset */
+body, p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+/* box model fix */
+* { -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+/* WRAPPER */
+div#wrapper {
+  margin: 0 auto;
+  max-width: 960px;
+}
+/* HEADER */
+header {
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  height: 340px;
+}
+header h1 {
+  padding: 2rem 0 0 10%;
+  font-size: 5rem;
+  letter-spacing: 5px;
+  font-family: 'Dancing Script', cursive;
+  color: whitesmoke;
+}
+header h2 {
+  padding: 1.5rem 0  2rem 15%;
+  font-size: 2rem;
+  font-family: 'Alegreya Sans', sans-serif;
+  color: rgb(45, 65, 96);
+  text-shadow: 3px 1px 5px white;
+}
+/* BODY */
+body {
+  color: #524f4c;
+  font-size: 16px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+h1 {
+  padding: 5%;
+  font-size: 2.5rem;
+  color: rgb(45, 65, 96);
+}
+h2 {
+  padding-left: 10%;
+}
+ul {
+  font-size: 1.25rem;
+  padding-left: 15%;
+}
+li {
+  padding-bottom: .75rem;
+}
+/* FOOTER */
+footer {
+  margin-top: 5%;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: rgb(153, 192, 224);
+}

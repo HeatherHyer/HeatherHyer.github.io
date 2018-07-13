@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* CSS reset */
+body, p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+/* box model fix */
+* { -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+/* WRAPPER */
+div#wrapper {
+  margin: 0 auto;
+  max-width: 960px;
+}
+/* HEADER */
+header {
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  height: 398px;
+}
+header h1 {
+  padding: 2rem 0 0 15%;
+  font-size: 4.75rem;
+  letter-spacing: 5px;
+  font-family: 'Dancing Script', cursive;
+  color: #473a27;
+}
+header h2 {
+  padding: 2rem 0  2rem 40%;
+  font-size: 2rem;
+  font-family: 'Alegreya Sans', sans-serif;
+  color: #d06ea3;
+}
+/* BODY */
+body {
+  color: #473a27;
+  font-size: 16px;
+  font-family: 'Alegreya Sans', sans-serif;
+}
+h1 {
+  padding: 2rem 0 .5rem 5%;
+  font-size: 2.5rem;
+  color: #d06ea3;
+}
+h2 {
+  padding-left: 10%;
+  padding-top: 1.25rem;
+}
+ul {
+  font-size: 1.25rem;
+  padding-left: 15%;
+}
+li {
+  padding-top: .75rem;
+}
+p {
+  font-size: 1.25rem;
+  padding: .75rem 0 0 15%;
+}
+/* FOOTER */
+footer {
+  color: white;
+  margin-top: 5%;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #5a73b5;
+}
