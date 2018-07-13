@@ -39,6 +39,9 @@ ul {
 li {
   padding-bottom: .75rem;
 }
+main a {
+  color: #3c579a;
+}
 /* FOOTER */
 footer {
   margin-top: 5%;
