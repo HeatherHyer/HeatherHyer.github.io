@@ -8,3 +8,5 @@ function getWindowSize() {
   var text = "Window size is " + width + " wide by " + height + " tall";
   document.getElementById("windowSize").innerHTML = text;
 }
+
+getWindowSize();
