@@ -11,8 +11,8 @@ function getWindowSize() {
 getWindowSize();
 
 function getOffset() {
-  var left = window.pageXOffset;
-  var top = window.pageYOffset;
+  var left = window.screenLeft;
+  var top = window.screenTop;
   var text = "Window offset is " + left + " from the left edge and " + top + " from the top of the display."
   document.getElementById("windowOffset").innerHTML = text;
 }
