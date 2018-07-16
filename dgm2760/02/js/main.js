@@ -19,3 +19,6 @@ function getOffset() { //windowOffset
 getOffset();
 
 document.getElementById("pageURL").innerHTML = "The page URL is " + window.location.href; //pageURL
+var title = document.getElementById("title").innerHTML;
+document.getElementById("docTitle").innerHTML = "Document title is " + title;
+document.getElementById("docUpdate").innerHTML = "This document was last updated on " + document.lastModified;
