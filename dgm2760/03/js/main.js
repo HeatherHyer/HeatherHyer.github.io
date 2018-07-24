@@ -2,15 +2,11 @@
 /*jslint browser:true */
 "use strict";
 
-var correct = getRandomNum(1, 15);
 var count = 0;
 var score;
 var pathToImg;
 var awardImg = document.createElement("IMG");
-
-function getRandomNum(low, high) {
-  return Math.floor((Math.random() * high) + low);
-}
+var correct = Math.floor((Math.random() * 15) + 1);
 
 function checkGuess() {
   count++;
@@ -18,7 +14,7 @@ function checkGuess() {
   var num = document.getElementById("guess").value;
   if (num < correct) {document.getElementById("feedback").innerHTML = "Your guess was too low.";}
   else if (num > correct) {document.getElementById("feedback").innerHTML = "Your guess was too high.";}
-  else if (num === correct) {
+  else if (num == correct) {
     score = count;
     document.getElementById("feedback").innerHTML = "You are correct!";
   }
