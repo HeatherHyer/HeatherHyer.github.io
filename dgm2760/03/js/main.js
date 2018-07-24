@@ -12,15 +12,16 @@ function getRandomNum(low, high) {
   return Math.floor((Math.random() * high) + low);
 }
 
-function checkGuess(Number(num)) {
+function checkGuess() {
   count++;
-  if (num < correct) {return "Your guess was too low.";}
-  else if (num > correct) {return "Your guess was too high.";}
+  var num = document.getElementById("guess").value;
+  if (num < correct) {document.getElementById("feedback").innerHTML = "Your guess was too low.";}
+  else if (num > correct) {document.getElementById("feedback").innerHTML = "Your guess was too high.";}
   else if (num === correct) {
     score = count;
-    return "You are correct!";
+    document.getElementById("feedback").innerHTML = "You are correct!";
   }
-  else {return "Your guess was out of range. Remember to pick a number between 1 and 15."}
+  else {document.getElementById("feedback").innerHTML = "Your guess was out of range. Remember to pick a number between 1 and 15."}
 }
 
 switch (score) {
