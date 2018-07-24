@@ -14,6 +14,7 @@ function getRandomNum(low, high) {
 
 function checkGuess() {
   count++;
+  document.getElementById("tries").innerHTML = count;
   var num = document.getElementById("guess").value;
   if (num < correct) {document.getElementById("feedback").innerHTML = "Your guess was too low.";}
   else if (num > correct) {document.getElementById("feedback").innerHTML = "Your guess was too high.";}
