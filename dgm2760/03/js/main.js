@@ -2,13 +2,15 @@
 /*jslint browser:true */
 "use strict";
 
-function getRandomNum(low, high) {
-  return Math.floor((Math.random() * high) + low);
-}
-
 var correct = getRandomNum(1, 15);
 var count = 0;
 var score;
+var pathToImg;
+var awardImg = document.createElement("IMG");
+
+function getRandomNum(low, high) {
+  return Math.floor((Math.random() * high) + low);
+}
 
 function checkGuess(Number(num)) {
   count++;
@@ -20,14 +22,6 @@ function checkGuess(Number(num)) {
   }
   else {return "Your guess was out of range. Remember to pick a number between 1 and 15."}
 }
-
-var awardImg = document.createElement("IMG");
-
-awardImg.setAttribute('src', pathToBlue);
-
-document.getElementById('award').appendChild(awardImg);
-
-var pathToImg;
 
 switch (score) {
   case 1:
@@ -43,3 +37,7 @@ switch (score) {
   default:
     pathToYellow = "../images/yellowRibbon.png";
 }
+
+awardImg.setAttribute('src', "../images/blueRibbon.png");
+
+document.getElementById('award').appendChild(awardImg);
