@@ -27,17 +27,17 @@ switch (score) {
   case 1:
   case 2:
   case 3:
-    pathToImg = "../images/blueRibbon.png";
+    pathToImg = "images/blueRibbon.png";
     break;
   case 4:
   case 5:
   case 6:
-    pathToRed = "../images/redRibbon.png";
+    pathToRed = "images/redRibbon.png";
     break;
   default:
-    pathToYellow = "../images/yellowRibbon.png";
+    pathToYellow = "images/yellowRibbon.png";
 }
 
-awardImg.setAttribute('src', "../images/blueRibbon.png");
+awardImg.setAttribute('src', "images/blueRibbon.png");
 
 document.getElementById('award').appendChild(awardImg);
