@@ -32,8 +32,9 @@ switch (score) {
   case 6:
     pathToImg = "images/redRibbon.png";
     break;
-  default:
-    pathToImg = "images/yellowRibbon.png";
+}
+if (score >6) {
+  pathToImg = "images/yellowRibbon.png";
 }
 
 awardImg.setAttribute('src', pathToImg);
