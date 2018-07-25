@@ -12,7 +12,8 @@ function checkGuess() {
   count++;
   document.getElementById("tries").innerHTML = count;
   var num = document.getElementById("guess").value;
-  if (num < correct) {document.getElementById("feedback").innerHTML = "Your guess was too low.";}
+  if (num > 15 || num < 1) {document.getElementById("feedback").innerHTML = "Your guess was out of range. Remember to pick a number between 1 and 15."}
+  else if (num < correct) {document.getElementById("feedback").innerHTML = "Your guess was too low.";}
   else if (num > correct) {document.getElementById("feedback").innerHTML = "Your guess was too high.";}
   else if (num == correct) {
     score = count;
@@ -36,5 +37,4 @@ function checkGuess() {
       awardImg.setAttribute('src', pathToImg);
       document.getElementById('award').appendChild(awardImg);
   }
-  else {document.getElementById("feedback").innerHTML = "Your guess was out of range. Remember to pick a number between 1 and 15."}
 }
