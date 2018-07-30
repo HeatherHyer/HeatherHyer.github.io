@@ -82,8 +82,5 @@ function randomFortune() {
 var randMonth = randomMonth();
 var randDay = randomDay();
 var randFortune = randomFortune();
-console.log(randMonth);
-console.log(randDay);
-console.log(randFortune);
 var fortuneAll = "On " + randMonth + " " + randDay + " , " + randFortune;
 document.getElementById("fortune").innerHTML = fortuneAll;
