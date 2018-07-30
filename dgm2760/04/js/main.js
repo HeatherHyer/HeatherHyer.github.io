@@ -63,13 +63,13 @@ function randomFortune() {
       return "you will win the lottery.";
       break;
     case 2:
-      return "you will meet an annoting woman. Give her coffee and she'll go away.";
+      return "you will meet an annoying woman. Give her coffee and she'll go away.";
       break;
     case 3:
       return "you will go bankrupt from buying too many elephants.";
       break;
     case 4:
-      return "you will meet Dylan O/'Brien.";
+      return "you will meet Dylan O'Brien.";
       break;
     case 5:
       return "you will develop psychic powers.";
