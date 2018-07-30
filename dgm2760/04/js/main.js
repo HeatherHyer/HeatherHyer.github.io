@@ -46,7 +46,7 @@ function randomMonth() {
       return "December";
       break;
     default:
-      return "Error generating random fortune"
+      return "Error generating random month"
    }
 
 }
