@@ -76,6 +76,7 @@ div.treeList {
   color: white;
   margin-left: 10%;
   margin-right: 10%;
+  height: auto;
 }
 div.treeList p {
   font-size: 1.25rem;
