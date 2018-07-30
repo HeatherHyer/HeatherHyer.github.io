@@ -79,7 +79,7 @@ function randomFortune() {
   }
 }
 
-var randMonth = randMonth();
+var randMonth = randomMonth();
 var randDay = randomDay();
 var randFortune = randomFortune();
 console.log(randMonth);
