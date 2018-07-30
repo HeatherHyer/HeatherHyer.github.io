@@ -4,12 +4,33 @@
 
 var trees = ["Oak", "Apple", "Pine"];
 
-var displayTrees = function() {
-  for (var i = 0; i < trees.length; i++) {
-    document.getElementById("treeList").innerHTML += trees[i] + "<br>";
-  }
-  document.getElementById("treeLength").innerHTML += "~The tree list is " + trees.length + " elements long~";
+function displayTrees() {
+  document.getElementById("treeList").innerHTML = trees.join("<br>");
+  document.getElementById("treeLength").innerHTML = "~The tree list is " + trees.length + " elements long~";
+}
+
+var addBirch = function() {
+  trees.push("Birch");
+  displayTrees();
+}
+var addBirchBtn = document.getElementById("addBirch");
+addBirchBtn.onclick = addBirch;
+
+var addPeach  = function() {
+  trees.unshift("Peach");
+  displayTrees();
 };
+var addPeachBtn = document.getElementById("addPeach");
+addPeachBtn.onclick = addPeach;
+
+/*
+var  = function() {
+
+  displayTrees();
+};
+var Btn = document.getElementById("");
+Btn.onclick = ;
+*/
 
 var showThird = function() {
   if (trees.length < 3) {
@@ -17,10 +38,9 @@ var showThird = function() {
   }
   else {
     document.getElementById("error").innerHTML = trees[2];
-    displayTrees;
+    displayTrees();
   }
 };
-
 var showThirdBtn = document.getElementById("showThird");
 showThirdBtn.onclick = showThird;
 
@@ -30,9 +50,8 @@ var showFourth = function() {
   }
   else {
     document.getElementById("error").innerHTML = trees[3];
-    displayTrees;
+    displayTrees();
   }
 };
-
 var showFourthBtn = document.getElementById("showFourth");
 showFourthBtn.onclick = showFourth;
