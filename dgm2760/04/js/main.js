@@ -45,12 +45,15 @@ function randomMonth() {
     case 12:
       return "December";
       break;
+    default:
+      return "Error generating random fortune"
    }
 
 }
 
 function randomDay() {
   var day = randomInt(30);
+  return day;
 }
 
 function randomFortune() {
@@ -71,11 +74,16 @@ function randomFortune() {
     case 5:
       return "you will develop psychic powers.";
       break;
+    default:
+      return "Error generating random fortune"
   }
 }
 
 var randMonth = randMonth();
 var randDay = randomDay();
 var randFortune = randomFortune();
+console.log(randMonth);
+console.log(randDay);
+console.log(randFortune);
 var fortuneAll = "On " + randMonth + " " + randDay + " , " + randFortune;
 document.getElementById("fortune").innerHTML = fortuneAll;
