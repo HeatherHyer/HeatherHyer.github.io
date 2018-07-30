@@ -64,18 +64,37 @@ var removeLast = function() {
 var removeLastBtn = document.getElementById("removeLast");
 removeLastBtn.onclick = removeLast;
 
-/*
-var  = function() {
-
-  displayTrees();
+var sort = function() {
+  if (trees.length < 2) {
+    document.getElementById("error").innerHTML = "There aren't enough trees in the list to sort. Try adding some.";
+  }
+  else {
+    trees.sort();
+    displayTrees();
+    document.getElementById("error").innerHTML = "";
+  }
 };
-var Btn = document.getElementById("");
-Btn.onclick = ;
-*/
+var sortBtn = document.getElementById("sort");
+sortBtn.onclick = sort;
+
+var lower = function() {
+  if (trees.length < 1) {
+    document.getElementById("error").innerHTML = "There aren't any trees in the list. Try adding some.";
+  }
+  else {
+    for (var i = 0; i < trees.length; i++) {
+      trees[i] = trees[i].toLowerCase();
+    }
+    displayTrees();
+    document.getElementById("error").innerHTML = "";
+  }
+};
+var lowerBtn = document.getElementById("lower");
+lowerBtn.onclick = lower;
 
 var showThird = function() {
   if (trees.length < 3) {
-    document.getElementById("error").innerHTML = "There isn't a third tree in your list to display. Try adding more first.";
+    document.getElementById("error").innerHTML = "There isn't a third tree in your list to display. Try adding some.";
   }
   else {
     document.getElementById("error").innerHTML = trees[2];
@@ -87,7 +106,7 @@ showThirdBtn.onclick = showThird;
 
 var showFourth = function() {
   if (trees.length < 4) {
-    document.getElementById("error").innerHTML = "There isn't a fourth tree in your list to display. Try adding more first.";
+    document.getElementById("error").innerHTML = "There isn't a fourth tree in your list to display. Try adding some.";
   }
   else {
     document.getElementById("error").innerHTML = trees[3];
