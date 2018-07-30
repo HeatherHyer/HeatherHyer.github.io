@@ -6,7 +6,7 @@ function randomInt(high) {
   return Math.floor((Math.random() * high) + 1);
 }
 
-funtion randomMonth() {
+function randomMonth() {
   var month = randomInt(12);
   switch(month) {
     case 1:
@@ -49,7 +49,7 @@ funtion randomMonth() {
 
 }
 
-funtion randomDay() {
+function randomDay() {
   var day = randomInt(30);
 }
 
