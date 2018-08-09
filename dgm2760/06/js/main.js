@@ -2,6 +2,12 @@
 /*jslint browser:true */
 "use strict";
 
+function story() {
+  var verbs = document.getElementById('verbs').value.toLowerCase().split(/\s+|\n/);
+  var nouns = document.getElementById('nouns').value.toLowerCase().split(/\s+|\n/);
+  var adjs = document.getElementById('adjs').value.toLowerCase().split(/\s+|\n/);
+}
+
 var adj1 = '<span class="changed">' + 'happy' + '</span>';
 var adj2 = '<span class="changed">' + 'silly' + '</span>';
 var adj3 = '<span class="changed">' + 'pink' + '</span>';
