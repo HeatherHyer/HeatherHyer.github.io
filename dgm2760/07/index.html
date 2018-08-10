@@ -28,25 +28,25 @@
 			</div>
 
 			<h2>Crust Options</h2>
-			<button>Thin Crust</button>
-			<button>Thick Crust</button>
+			<button onclick="pizza.crust = 'thin'">Thin Crust</button>
+			<button onclick="pizza.crust = 'thick'">Thick Crust</button>
 
 			<h2>Topping Options</h2>
-			<button>Sausage</button>
-			<button>Pepperoni</button>
+			<button onclick="pizza.topping = 'sausage'">Sausage</button>
+			<button onclick="pizza.topping = 'pepperoni'">Pepperoni</button>
 
 			<h2>Size Options</h2>
-			<button>Small</button>
-			<button>Large</button>
+			<button onclick="pizza.size = 'small'">Small</button>
+			<button onclick="pizza.size = 'large'">Large</button>
 
 			<h2>Time to Eat</h2>
-			<button>Build Pizza</button>
+			<button onclick="pizza.buildPizza()">Build Pizza</button>
 
 			<h2>Shopping List</h2>
-			<button>Shopping List</button>
+			<button onclick="pizza.shoppingList()">Shopping List</button>
 
 			<h2>Messages to the User</h2>
-			<p></p>
+			<p id="message"></p>
 
 		</main>
 
