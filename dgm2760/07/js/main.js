@@ -24,24 +24,12 @@ var pizza = {
       return;
     }
     else {
-      if (pizza.crust == "thin") {
-        flour *= 1;
-      }
-      if (pizza.crust == "thick") {
-        flour *= 2;
-      }
-      if (pizza.size == "small") {
-        flour *= 1;
-      }
-      if (pizza.size == "large") {
-        flour *= 2;
-      }
-      if (pizza.topping == "sausage") {
-        meat = "sausage";
-      }
-      if (pizza.topping == "pepperoni") {
-        meat = "pepperoni";
-      }
+      if (pizza.crust == "thin") {flour *= 1;}
+      if (pizza.crust == "thick") {flour *= 2;}
+      if (pizza.size == "small") {flour *= 1;}
+      if (pizza.size == "large") {flour *= 2;}
+      if (pizza.topping == "sausage") {meat = "sausage";}
+      if (pizza.topping == "pepperoni") {meat = "pepperoni";}
       document.getElementById("message").innerHTML = "You will need to purchase " + flour + " cups of flour and 1 lb of " + meat + ".";
     }
   }
