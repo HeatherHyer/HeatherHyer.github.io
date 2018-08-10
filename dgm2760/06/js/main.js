@@ -1,6 +1,6 @@
 // JavaScript Document
 /*jslint browser:true */
-"use strict";
+"use strict()";
 
 function tellStory() {
   var verbs = document.getElementById('verbs').value.toLowerCase().split(/\s+|\n/);

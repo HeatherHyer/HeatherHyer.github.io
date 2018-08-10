@@ -1,6 +1,6 @@
 // JavaScript Document
 /*jslint browser:true */
-"use strict";
+"use strict()";
 
 var trees = ["Oak", "Apple", "Pine"];
 
@@ -13,7 +13,7 @@ var addBirch = function() {
   trees.push("Birch");
   displayTrees();
   document.getElementById("error").innerHTML = "";
-}
+};
 var addBirchBtn = document.getElementById("addBirch");
 addBirchBtn.onclick = addBirch;
 

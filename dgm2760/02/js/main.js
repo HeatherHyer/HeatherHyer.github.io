@@ -1,6 +1,6 @@
 // JavaScript Document
 /*jslint browser:true */
-"use strict";
+"use strict()";
 
 function getWindowSize() { //windowSize
   var width = window.innerWidth;
@@ -13,7 +13,7 @@ getWindowSize();
 function getOffset() { //windowOffset
   var left = window.screenLeft;
   var top = window.screenTop;
-  var text = "Window offset is " + left + " from the left edge and " + top + " from the top of the display."
+  var text = "Window offset is " + left + " from the left edge and " + top + " from the top of the display.";
   document.getElementById("windowOffset").innerHTML = text;
 }
 getOffset();

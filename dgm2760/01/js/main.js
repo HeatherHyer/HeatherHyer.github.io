@@ -1,5 +1,5 @@
 /*jslint browser:true*/
-"use strict";
+"use strict()";
 
 var company = "Joe's Bed and Breakfast";
 document.getElementById("company").innerHTML = company;

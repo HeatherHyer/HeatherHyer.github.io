@@ -1,6 +1,6 @@
 // JavaScript Document
 /*jslint browser:true */
-"use strict";
+"use strict()";
 
 var count = 0;
 var score = 0;
@@ -12,7 +12,7 @@ function checkGuess() {
   count++;
   document.getElementById("tries").innerHTML = count;
   var num = document.getElementById("guess").value;
-  if (num > 15 || num < 1) {document.getElementById("feedback").innerHTML = "Your guess was out of range. Remember to pick a number between 1 and 15."}
+  if (num > 15 || num < 1) {document.getElementById("feedback").innerHTML = "Your guess was out of range. Remember to pick a number between 1 and 15.";}
   else if (num < correct) {document.getElementById("feedback").innerHTML = "Your guess was too low.";}
   else if (num > correct) {document.getElementById("feedback").innerHTML = "Your guess was too high.";}
   else if (num == correct) {
