@@ -57,7 +57,11 @@ function validateForm() {
 
   if (status === false) {
     document.getElementById('formProblems').className = "showErrorMsg";
+    return false;
+  }
+  else {
+    return true;
   }
 
-  return status;
+
 }
