@@ -30,14 +30,14 @@
     <knowledge>data structures</knowledge>
     <experience>Adobe Creative Cloud Suite, including Photoshop and Illustrator</experience>
     <experience>Web Design</experience>
-    <spoken_languages></spoken_languages>
+    <spoken_languages>Spanish</spoken_languages>
   </skills>
 
   <work_experience>
     <job>
       <position>Quality Assurance Engineer Intern</position>
       <company>Family Search</company>
-      <dates>May 2018 — Present </dates>
+      <dates>May 2018 — Present</dates>
       <duties>Test front-end web pages throughout the process of development and ensure the release of a quality product. Write automated test code (protractor). Collaborate with developers and others in a team environment. Adhere to Agile software development practices.</duties>
     </job>
     <job>
