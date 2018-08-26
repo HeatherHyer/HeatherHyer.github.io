@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resume>
+  <name>Heather Hyer</name>
+  <email>heatherahyer@gmail.com</email>
+  <phone>(385)254-4874</phone>
+
+  <profile>I am an independent, driven student and a diligent worker. I am personable and attentive to the needs of others. I am a creative individual with the ability to learn skills quickly.</profile>
+
+  <education>
+    <school level="Junior">Utah Valley University</school>
+    <major>Software Engineering</major>
+      <specialization>Web and App Development</specialization>
+      <minor>Computer Science</minor>
+      <minor>Digital Media</minor>
+    <member>UVU Honors Program</member>
+    <member>Society of Women Engineers (SWE)</member>
+  </education>
+
+  <community_involvement>
+    <volunteer>Orem Family Support and Treatment Center</volunteer>
+    <council>THS Community Council Student Delegate</council>
+    <member>National Honors Society (NHS)</member>
+    <volunteer>Special Needs Mutual</volunteer>
+  </community_involvement>
+
+  <skills>
+    <languages>C++, C#, Python, JavaScript, HTML/HTML5, CSS</languages>
+    <experience>Quality Assurance testing, including automated test scripting</experience>
+    <knowledge>Agile software development practices</knowledge>
+    <knowledge>data structures</knowledge>
+    <experience>Adobe Creative Cloud Suite, including Photoshop and Illustrator</experience>
+    <experience>Web Design</experience>
+    <spoken_languages></spoken_languages>
+  </skills>
+
+  <work_experience>
+    <job>
+      <position>Quality Assurance Engineer Intern</position>
+      <company>Family Search</company>
+      <dates>May 2018 — Present </dates>
+      <duties>Test front-end web pages throughout the process of development and ensure the release of a quality product. Write automated test code (protractor). Collaborate with developers and others in a team environment. Adhere to Agile software development practices.</duties>
+    </job>
+    <job>
+      <position>Math Tutor/Teacher&apos;s Aide</position>
+      <company>Lumen Scholar Institute</company>
+      <dates>March 2017 — April 2018</dates>
+      <duties>Assist students with online technology, tutor K-12 students in math, assist teachers. Organize curriculum on Canvas, facilitate live-interactive classroom learning. Teach basic coding skills to elementary school students.</duties>
+    </job>
+    <job>
+      <position>Math Tutor</position>
+      <company>Utah Valley University</company>
+      <dates>August 2014 — April 2015</dates>
+      <duties>Tutor UVU students in college-level math courses ranging from College Algebra to Calculus and Statistics. CRLA Level 2 Certified.</duties>
+    </job>
+  </work_experience>
+</resume>
