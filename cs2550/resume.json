@@ -1,0 +1,85 @@
+{
+  "name": "Heather Hyer",
+  "email": "heatherahyer@gmail.com",
+  "phone": "(385)254-4874",
+
+  "profile": "I am an independent, driven student and a diligent worker. I am personable and attentive to the needs of others. I am a creative individual with the ability to learn skills quickly.",
+
+  "education": {
+    "school": "Utah Valley University",
+    "level": "Junior",
+    "major": "Software Engineering",
+    "specialization": "Web and App Development",
+    "minors": [
+      "Computer Science",
+      "Digital Media"
+    ],
+    "memberships": [
+      "UVU Honors Program",
+      "Society of Women Engineers (SWE)"
+    ]
+  },
+
+  "communityInvolvement": {
+    "volunteering": [
+      "Orem Family Support and Treatment Center",
+      "Special Needs Mutual"
+    ],
+    "council": "THS Community Council Student Delegate",
+    "membership": "National Honors Society (NHS)"
+  },
+
+  "skills": {
+    "languages": [
+      "C++",
+      "C#",
+      "Python",
+      "JavaScript",
+      "HTML/HTML5",
+      "CSS"
+    ],
+    "experiences": [
+      "Quality Assurance testing, including automated test scripting",
+      "Adobe Creative Cloud Suite, including Photoshop and Illustrator",
+      "Web Design"
+    ],
+    "knowledge": [
+      "Agile software development practices",
+      "data structures"
+    ],
+    "spokenLanguage": "Spanish"
+  },
+
+  "jobs": [
+    {
+      "position": "Quality Assurance Engineer Intern",
+      "company": "Family Search",
+      "dates":" May 2018 — Present",
+      "duties": [
+        "Test front-end web pages throughout the process of development and ensure the release of a quality product.",
+        "Write automated test code (protractor).",
+        "Collaborate with developers and others in a team environment.",
+        "Adhere to Agile software development practices."
+      ]
+    },
+    {
+      "position": "Math Tutor/Teacher's Aide",
+      "company": "Lumen Scholar Institute",
+      "dates": "March 2017 — April 2018",
+      "duties": [
+        "Assist students with online technology, tutor K-12 students in math, assist teachers.",
+        "Organize curriculum on Canvas, facilitate live-interactive classroom learning.",
+        "Teach basic coding skills to elementary school students."
+      ]
+    },
+    {
+      "position": "Math Tutor",
+      "company": "Utah Valley University",
+      "dates": "August 2014 — April 2015",
+      "duties": [
+        "Tutor UVU students in college-level math courses ranging from College Algebra to Calculus and Statistics.",
+        "CRLA Level 2 Certified."
+      ]
+    }
+  ]
+}
