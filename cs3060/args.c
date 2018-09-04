@@ -20,18 +20,18 @@ int main(int argc, char *argv[]) {
 
 
   int num1, num2, num3;
+  //Same as lines 32-34
+  /*
   for (;;) {
     int count = fscanf(fp, "%d %d %d", &num1, $num2, $num3);
     printf("Read %d numbers %d, %d, and %d\n", ccount, num1, num2, num3);
     if (count != 3) break;
   }
+  */
 
-  //Same as lines 21-25
-  /*
   while (fscanf(fp, "%d %d %d", &num1, $num2, $num3) == 3) {
     printf("Read %d numbers %d, %d, and %d\n", ccount, num1, num2, num3);
   }
-  */
 
 
   return 0;
