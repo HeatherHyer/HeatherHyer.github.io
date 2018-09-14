@@ -1,6 +1,44 @@
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  min-width: 960px;
+  font-family: 'Alegreya Sans', sans-serif;
+  color: #4c4e4d;
 }
-.wrapper {
-  margin-left: 120px;
+main {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+header {
+  position: relative;
+  width: 800px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.topLeft {
+  position: relative;
+  float: left;
+  width: 60%;
+}
+.topRight {
+  position: relative;
+  float: right;
+  width: 40%;
+}
+.left {
+  position: relative;
+  float: left;
+  width: 60%;
+}
+.right {
+  position: relative;
+  float: right;
+  width: 40%;
+}
+.bottom {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+h1 {
+  font-size: 5rem;
 }
