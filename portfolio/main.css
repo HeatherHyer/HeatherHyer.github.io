@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* CSS Document */
 
 /* CSS reset */
 body, p, h1, h2, h3, h4, h5, h6 {
@@ -17,13 +16,12 @@ div#wrapper {
 }
 /* BODY */
 body {
-  color: rgb(45, 65, 96);
+  color: #2d4160;
   font-size: 16px;
   font-family: 'Alegreya Sans', sans-serif;
 }
 main {
   padding: 2rem;
-  height: 600px;
 }
 h1 {
   padding: 5%;
@@ -45,7 +43,7 @@ footer {
   padding: 1.5rem;
   text-align: center;
   color: whitesmoke;
-  background-color: rgb(153, 192, 224);
+  background-color: #9ac1e0;
 }
 /* HEADER */
 .header-container {
@@ -81,4 +79,43 @@ li a.active {
 
 li a:hover {
     color: #B6B6B6;
+}
+/*BUTTONS*/
+button {
+  font-family: 'Alegreya Sans', sans-serif;
+  border: none;
+  border-radius: 8px;
+  margin: 5%;
+  cursor:pointer;
+}
+button.regular {
+  color: white;
+  font-size: 1.25rem;
+  background-color: #9ac1e0;
+  padding: 12px;
+}
+button.image {
+  color: rgba(0, 0, 0, 0);
+  box-shadow: 1px 1px 5px 3px #b8baba;
+  height: 200px;
+  width: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 6px;
+}
+#resume:hover, #linkedin:hover {
+  color: white;
+  border: none;
+  background-image: none;
+  font-size: 2rem;
+  background-color: #9ac1e0;
+  height: 200px;
+  width: 200px;
+}
+#resume {
+  background-image: url("images/resume_icon.png");
+}
+#linkedin {
+  background-image: url("images/linkedin_icon.png");
 }
