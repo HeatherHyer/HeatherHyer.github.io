@@ -80,6 +80,16 @@ li a.active {
 li a:hover {
     color: #B6B6B6;
 }
+
+/*TABLE*/
+table {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+td {
+  padding: 5%
+}
 /*BUTTONS*/
 button {
   font-family: 'Alegreya Sans', sans-serif;
