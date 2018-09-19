@@ -120,11 +120,11 @@ button.image {
   width: 200px;
 }
 #resume {
-  background-image: url("images/resume_icon.png");
+  background-image: url("images/resume_icon.PNG");
 }
 #linkedin {
-  background-image: url("images/linkedin_icon.png");
+  background-image: url("images/linkedin_icon.PNG");
 }
 #references {
-  background-image: url("images/references_icon.png");
+  background-image: url("images/references_icon.PNG");
 }
