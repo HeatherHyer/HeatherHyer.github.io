@@ -1,0 +1,51 @@
+body {
+  min-width: 960px;
+  font-family: 'Alegreya Sans', sans-serif;
+  color: #646665;
+  margin-left: 5%;
+  margin-right: 10%;
+  border-left: 90px solid #9ac1e0;
+  padding-left: 40px;
+  height: 1200px;
+}
+main {
+  width: 80%;
+}
+header {
+  min-width: 960px;
+  width: 80%;
+}
+.topLeft {
+  position: relative;
+  float: left;
+  width: 60%;
+}
+.topRight {
+  position: relative;
+  float: right;
+  width: 40%;
+}
+.left {
+  position: relative;
+  float: left;
+  width: 60%;
+}
+.right {
+  position: relative;
+  float: right;
+  width: 40%;
+}
+.bottom {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+h1 {
+  font-size: 5rem;
+}
+div.contact h3, span.dates {
+  float: right;
+}
+div.contact {
+  margin-top: 50px;
+}
