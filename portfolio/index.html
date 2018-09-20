@@ -23,10 +23,30 @@
     </header>
 
     <main>
-			<button class="image" id="resume" onclick="location.href='resume.pdf'">View<br> Resume</button>
-			<button class="regular">Request References</button>
-			<button class="image" id="linkedin" onclick="location.href='https://www.linkedin.com/in/heather-hyer-55b293139/'">View<br>LinkedIn<br>Profile</button>
+			<div class="content">
+				<button class="image" id="resume" onclick="location.href='resume.pdf'">View<br> Resume</button>
+				<button class="image" id="references">Request References</button>
+				<button class="image" id="linkedin" onclick="location.href='https://www.linkedin.com/in/heather-hyer-55b293139/'">View<br>LinkedIn<br>Profile</button>
+			</div>
 		</main>
+
+		<div id="referencesModal" class="modal">
+		  <div class="modal-content">
+			<form id="requestForm" method="post">
+				<span class="close">&times;</span>
+				<br>Name:<br>
+				<input type="text" id="rname" required><br><br>
+				Company:<br>
+				<input type="text" id="rcompany"><br><br>
+				E-mail:<br>
+				<input type="text" id="remail" required><br><br>
+				Comment:<br>
+				<textarea id="rcomment"></textarea><br><br>
+				<button type="submit" id="submitRequest">Submit Request</button>
+			</form>
+
+		  </div>
+		</div>
 
 		<footer>
 			<h3>Last Updated 9/17/18 by Heather Hyer</h3>
@@ -34,5 +54,5 @@
 
 	</div>
 </body>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </html>
