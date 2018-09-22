@@ -133,10 +133,10 @@ button.image {
 
 /*MODAL*/
 .modal {
-    display: none;
+    display: flex;
+    justify-content: center;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -148,11 +148,13 @@ button.image {
 
 .modal-content {
     background-color: #fefefe;
-    margin: auto;
+    margin: 10%;
     padding: 2rem;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px;
+    height: 80%;
+    min-height: 560px;
 }
 
 .close {
