@@ -5,7 +5,8 @@ var btn = document.getElementById("references");
 var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function() {
-    modal.style.display = "block";
+    modal.style.display = 'flex';
+    modal.style['justify-content'] =  'center';
 }
 
 span.onclick = function() {
