@@ -67,29 +67,31 @@ let resume = {
   ]
 }
 
-document.getElementById('name').innerText = resume.name;
-document.getElementById('email').innerText = resume.email;
-document.getElementById('phone').innerText = resume.phone;
-document.getElementById('profile').innerHTML = resume.profile;
-document.getElementById('school').innerText = resume.education.school.name;
-for (let info of resume.education.school.info) {
-  document.getElementById('schoolInfo').innerHTML += '<li>' + info + '</li>';
-}
-for (let info of resume.communityInvolvement) {
-  document.getElementById('communityInfo').innerHTML += '<li>' + info + '</li>';
-}
-for (let skill of resume.skills) {
-  document.getElementById('skills').innerHTML += '<li>' + skill + '</li>';
-}
-let jobTitles = document.getElementsByClassName('jobTitle');
-let companies = document.getElementsByClassName('company');
-let dates = document.getElementsByClassName('dates');
-let jobDescriptions = document.getElementsByClassName('jobDescription');
-for (i = 0; i < resume.jobs.length; i++) {
-    jobTitles[i].innerHTML = resume.jobs[i].position;
-    companies[i].innerHTML = resume.jobs[i].company;
-    dates[i].innerHTML = resume.jobs[i].dates;
-    jobDescriptions[i].innerHTML = resume.jobs[i].duties.join('<br>');
+function displayFromJson() {
+  document.getElementById('name').innerText = resume.name;
+  document.getElementById('email').innerText = resume.email;
+  document.getElementById('phone').innerText = resume.phone;
+  document.getElementById('profile').innerHTML = resume.profile;
+  document.getElementById('school').innerText = resume.education.school.name;
+  for (let info of resume.education.school.info) {
+    document.getElementById('schoolInfo').innerHTML += '<li>' + info + '</li>';
+  }
+  for (let info of resume.communityInvolvement) {
+    document.getElementById('communityInfo').innerHTML += '<li>' + info + '</li>';
+  }
+  for (let skill of resume.skills) {
+    document.getElementById('skills').innerHTML += '<li>' + skill + '</li>';
+  }
+  let jobTitles = document.getElementsByClassName('jobTitle');
+  let companies = document.getElementsByClassName('company');
+  let dates = document.getElementsByClassName('dates');
+  let jobDescriptions = document.getElementsByClassName('jobDescription');
+  for (i = 0; i < resume.jobs.length; i++) {
+      jobTitles[i].innerHTML = resume.jobs[i].position;
+      companies[i].innerHTML = resume.jobs[i].company;
+      dates[i].innerHTML = resume.jobs[i].dates;
+      jobDescriptions[i].innerHTML = resume.jobs[i].duties.join('<br>');
+  }
 }
 
 var showEducation = true;
