@@ -1,4 +1,4 @@
-let resume = {
+var resume = {
   "name": "Heather Hyer",
   "email": "heatherahyer@gmail.com",
   "phone": "(385)254-4874",
@@ -65,7 +65,7 @@ let resume = {
       ]
     }
   ]
-}
+};
 
 function displayFromJson() {
   document.getElementById('name').innerText = resume.name;
@@ -73,19 +73,19 @@ function displayFromJson() {
   document.getElementById('phone').innerText = resume.phone;
   document.getElementById('profile').innerHTML = resume.profile;
   document.getElementById('school').innerText = resume.education.school.name;
-  for (let info of resume.education.school.info) {
+  for (var info of resume.education.school.info) {
     document.getElementById('schoolInfo').innerHTML += '<li>' + info + '</li>';
   }
-  for (let info of resume.communityInvolvement) {
+  for (var info of resume.communityInvolvement) {
     document.getElementById('communityInfo').innerHTML += '<li>' + info + '</li>';
   }
-  for (let skill of resume.skills) {
+  for (var skill of resume.skills) {
     document.getElementById('skills').innerHTML += '<li>' + skill + '</li>';
   }
-  let jobTitles = document.getElementsByClassName('jobTitle');
-  let companies = document.getElementsByClassName('company');
-  let dates = document.getElementsByClassName('dates');
-  let jobDescriptions = document.getElementsByClassName('jobDescription');
+  var jobTitles = document.getElementsByClassName('jobTitle');
+  var companies = document.getElementsByClassName('company');
+  var dates = document.getElementsByClassName('dates');
+  var jobDescriptions = document.getElementsByClassName('jobDescription');
   for (i = 0; i < resume.jobs.length; i++) {
       jobTitles[i].innerHTML = resume.jobs[i].position;
       companies[i].innerHTML = resume.jobs[i].company;
