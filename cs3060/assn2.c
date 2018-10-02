@@ -20,18 +20,6 @@ the copy will receive a zero on this assignment.
 int main(int argc, char *argv[]) {
   FILE *file = stdin;
 
-  if (argc > 1) {
-    file = fopen(argv[1], "r");
-  } else {
-    printf("Please enter 3 integers at a time\n");
-  }
-
-  if (file == NULL) {
-    printf("Unable to open the file %s\n", argv[1]);
-    perror("Trying to open file");
-    return -1;
-  }
-
   //Processes
   pid_t p;
   int fp[2];
@@ -51,25 +39,37 @@ int main(int argc, char *argv[]) {
     return -1;
   }
   else { //parent process
-    close(fp[FD_READ]);
     FILE *fout = fdopen(fp[FD_WRITE], "r");
-    printf("Parent here\n");
+    close(fp[FD_READ]);
+
+    if (argc > 1) {
+      file = fopen(argv[1], "r");
+    } else {
+      printf("Please enter 3 integers at a time\n");
+    }
+
+    if (file == NULL) {
+      printf("Unable to open the file %s\n", argv[1]);
+      perror("Trying to open file");
+      return -1;
+    }
 
     int num1;
     int num2;
     int num3;
 
-    while (fscanf(file, "%d %d %d", &num1, &num2, &num3) == 3) {
-      dprintf(fout, "(%d * %d) / %d\n", num1, num2, num3);
+    dprintf(fp[FD_WRITE], "scale=4\n");
+
+    while (fscanf(file, "%d %d %d", &num1, &num2, &num3) == EOF) {
+      dprintf(fp[FD_WRITE], "(%d * %d) / %d\n", num1, num2, num3);
+      fscanf(fout, "%lf", &total);
     }
 
     close(fp[FD_WRITE]);
     int ret;
     wait(&ret);
-    printf("Child returned %d\n", WEXITSTATUS(ret));
+    printf("Child completed with %d\n", WEXITSTATUS(ret));
   }
-
-  printf("Child completed with %d\n", p);
 
   return 0;
 }

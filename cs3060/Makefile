@@ -1,2 +1,2 @@
-assn1: assn1.c Makefile
-  gcc -o assn1 assn1.c
+assn2: assn2.c Makefile
+  gcc -o assn2 assn2.c
