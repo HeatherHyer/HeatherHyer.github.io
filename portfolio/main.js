@@ -1,22 +1,21 @@
 "use strict";
 
-var modal = document.getElementById('referencesModal');
-var btn = document.getElementById("references");
-var span = document.getElementsByClassName("close")[0];
+function displayModal(id) {
+  var modal = document.getElementById(id + 'Modal');
 
-btn.onclick = function() {
-    modal.style.display = 'flex';
-    modal.style['justify-content'] =  'center';
+  modal.style.display = 'flex';
+  modal.style['justify-content'] =  'center';
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
 }
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+function closeModal(id) {
+  var modal = document.getElementById(id + 'Modal');
+  modal.style.display = "none";
 }
 
 var submit = document.getElementById('submitRequest');

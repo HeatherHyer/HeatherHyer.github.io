@@ -25,15 +25,17 @@
     <main>
 			<div class="content">
 				<button class="image" id="resume" onclick="location.href='resume.pdf'">View<br> Resume</button>
-				<button class="image" id="references">Request References</button>
+				<button class="image" id="references" onclick="displayModal('references')">Request References</button>
 				<button class="image" id="linkedin" onclick="location.href='https://www.linkedin.com/in/heather-hyer-55b293139/'">View<br>LinkedIn<br>Profile</button>
+				<button class="image" id="letters" onclick="displayModal('letters')">View Letters of Recommendation</button>
 			</div>
 		</main>
 
 		<div id="referencesModal" class="modal">
 		  <div class="modal-content">
 			<form id="requestForm" method="post">
-				<span class="close">&times;</span>
+				<span class="close" onclick="closeModal('references')">&times;</span>
+				<h1>Request References</h1>
 				<br>Name:<br>
 				<input type="text" id="rname" required><br><br>
 				Company:<br>
@@ -47,11 +49,19 @@
 		  </div>
 		</div>
 
-		<footer>
-			<h3>Last Updated 9/17/18 by Heather Hyer</h3>
-		</footer>
+		<div id="lettersModal" class="modal">
+		  <div class="modal-content" id="lettersModalContent">
+				<span class="close" onclick="closeModal('letters')">&times;</span>
+				<h1>View Letters of Recommendation</h1>
+				<button class="regular" onclick="location.href='letters/brady_rogers.pdf'">Brady Rogers – Internship Mentor</button>
+				<button class="regular" onclick="location.href='letters/david_wagstaff.pdf'">David Wagstaff – Professor</button>
+		  </div>
+		</div>
 
 	</div>
 </body>
+<footer>
+	<h3>Last Updated 9/17/18 by Heather Hyer</h3>
+</footer>
 <script type="text/javascript" src="main.js"></script>
 </html>
