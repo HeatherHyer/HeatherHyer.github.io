@@ -9,6 +9,7 @@ body {
   height: 1200px;
 }
 main {
+  min-width: 960px;
   width: 80%;
 }
 header {
