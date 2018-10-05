@@ -1,20 +1,18 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<pthread.h>
 
-int ps_turn;
-int ps_flag[2] = {0, 0};
+int lock = 0;
 
-//this program creates a race condition
+//this program prevents a race condition
 
 void start_crit(int thid) {
-	int other = 1 - thid;
-	ps_flag[thid] = 1;
-	ps_turn = other;
-	while(ps_flag[other] == 1 && ps_turn == other);
+	while(lock);
+	lock = 1;
 }
 
 void end_crit(int thid) {
-	ps_flag[thid] = 0;
+	lock = 0;
 }
 
 void * inc_func(void *p) {

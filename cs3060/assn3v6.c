@@ -1,20 +1,18 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<pthread.h>
 
-int ps_turn;
-int ps_flag[2] = {0, 0};
+int lock = 0;
 
-//this program creates a race condition
+//this program prevents
 
 void start_crit(int thid) {
-	int other = 1 - thid;
-	ps_flag[thid] = 1;
-	ps_turn = other;
-	while(ps_flag[other] == 1 && ps_turn == other);
+	while(_sync_lock_test_and_set(&lock, 1)); //ensures that no other process has come in and set lock to 1
+	lock = 1;
 }
 
 void end_crit(int thid) {
-	ps_flag[thid] = 0;
+	lock = 0;
 }
 
 void * inc_func(void *p) {
@@ -44,15 +42,19 @@ void * dec_func(void *p) {
 }
 
 main() {
-  pthread_t th1, th2;
+  pthread_t th1, th2, th3, th4;
 
 	int i = 0;
 
   pthread_create(&th1, NULL, inc_func, &i);
 	pthread_create(&th2, NULL, dec_func, &i);
+	pthread_create(&th3, NULL, inc_func, &i);
+	pthread_create(&th4, NULL, dec_func, &i);
 
   pthread_join(th1, NULL); //does the same thing as wait
 	pthread_join(th2, NULL); //does the same thing as wait
+	pthread_join(th3, NULL); //does the same thing as wait
+	pthread_join(th4, NULL); //does the same thing as wait
 
 	printf("The i variable is %d\n", i);
 
