@@ -18,13 +18,7 @@ the copy will receive a zero on this assignment.
 #define FD_WRITE 1
 
 int main(int argc, char *argv[]) {
-  printf("Assignment 2: Forks and pipes by Heather Hyer\n");
-  printf("Please provide a list of numbers, grouped by threes, by filename or the console.\n");
-  printf("Press Ctrl-D on a new line to finish entering numbers on the console.\n");
   FILE *file = stdin;
-  int num1;
-  int num2;
-  int num3;
 
   //Processes
   pid_t p;
@@ -40,16 +34,18 @@ int main(int argc, char *argv[]) {
     close(fp[FD_WRITE]);
     dup2(fp[FD_READ], 0);
     close(fp[FD_READ]);
-    execlp("bc", "bc", NULL);
+    execlp("bc", "bc", "-n", NULL);
     perror("Cannot exec");
     return -1;
   }
   else { //parent process
-    close(fp[FD_READ]);
     FILE *fout = fdopen(fp[FD_WRITE], "r");
+    close(fp[FD_READ]);
 
     if (argc > 1) {
       file = fopen(argv[1], "r");
+    } else {
+      printf("Please enter 3 integers at a time\n");
     }
 
     if (file == NULL) {
@@ -58,19 +54,22 @@ int main(int argc, char *argv[]) {
       return -1;
     }
 
+    int num1;
+    int num2;
+    int num3;
+
     dprintf(fp[FD_WRITE], "scale=4\n");
 
-    while (fscanf(file, "%d %d %d", &num1, &num2, &num3) == 3) {
+    while (fscanf(file, "%d %d %d", &num1, &num2, &num3) == EOF) {
       dprintf(fp[FD_WRITE], "(%d * %d) / %d\n", num1, num2, num3);
+      fscanf(fout, "%lf", &total);
     }
 
     close(fp[FD_WRITE]);
-    //int ret;
-    //wait(&ret);
-    //printf("Child completed with %d\n", WEXITSTATUS(ret));
+    int ret;
+    wait(&ret);
+    printf("Child completed with %d\n", WEXITSTATUS(ret));
   }
-
-  printf("Child completed with 0\n");
 
   return 0;
 }
