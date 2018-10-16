@@ -1,0 +1,11 @@
+* {
+  margin-left: 5%;
+  margin-top: 5%;
+  font-family: Arial;
+  color: black;
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 2em;
+}
