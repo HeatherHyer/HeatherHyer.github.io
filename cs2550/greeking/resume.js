@@ -35,6 +35,7 @@ function displayFromJson(resume) {
 }
 
 var resume;
+var greekedResume = 0;
 
 $(document).ready(function() {
   $.getJSON('resume.json', function(data) {
@@ -43,17 +44,19 @@ $(document).ready(function() {
   });
   $('#egg').click(function() {
     if ($('#egg').attr('class') == 'english') {
-      $.getJSON('greekedResume.json', function(data) {
-        resume =  data;
-        displayFromJson(resume);
-      });
+      if (greekedResume === 0) {
+        $.getJSON('greekedResume.json', function(data) {
+          greekedResume =  data;
+          displayFromJson(greekedResume);
+        });
+      }
+      else {
+        displayFromJson(greekedResume);
+      }
       $('#egg').toggleClass('english');
     }
     else {
-      $.getJSON('resume.json', function(data) {
-        resume =  data;
-        displayFromJson(resume);
-      });
+      displayFromJson(resume);
       $('#egg').toggleClass('english');
     }
   });
