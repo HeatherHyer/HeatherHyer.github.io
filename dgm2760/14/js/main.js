@@ -6,10 +6,24 @@ var weatherForecast = new XMLHttpRequest();
 var cObj;
 var fObj;
 
-// GET THE CONDITIONS
-weatherConditions.open('GET', '//api.openweathermap.org/data/2.5/weather?zip=84653,us&appid=9e5934632d7f34dcb20cc9a5ea15543d&units=imperial', true);
-weatherConditions.responseType = 'text';
-weatherConditions.send(null);
+function loadWeather() {
+  var zip = document.getElementById('zip').value;
+  if (zip === '') {zip="84653";}
+
+  var conditionsPath = "//api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&appid=9e5934632d7f34dcb20cc9a5ea15543d&units=imperial";
+  var forecastPath = "//api.openweathermap.org/data/2.5/forecast?zip=" + zip + ",us&appid=9e5934632d7f34dcb20cc9a5ea15543d&units=imperial";
+
+  // GET THE CONDITIONS
+  weatherConditions.open('GET', conditionsPath, true);
+  weatherConditions.responseType = 'text';
+  weatherConditions.send(null);
+  // GET THE FORECAST
+  weatherForecast.open('GET', forecastPath, true);
+  weatherForecast.responseType = 'text';
+  weatherForecast.send();
+}
+
+
 
 weatherConditions.onload = function() {
     if (weatherConditions.status === 200){
@@ -31,10 +45,7 @@ weatherConditions.onload = function() {
 
 
 
-// GET THE FORECAST
-weatherForecast.open('GET', '//api.openweathermap.org/data/2.5/forecast?zip=84653,us&appid=9e5934632d7f34dcb20cc9a5ea15543d&units=imperial', true);
-weatherForecast.responseType = 'text';
-weatherForecast.send();
+
 
 weatherForecast.onload = function() {
 if (weatherForecast.status === 200){
@@ -69,3 +80,5 @@ if (weatherForecast.status === 200){
   document.getElementById('r3c4').innerHTML = fObj.list[16].main.temp_max + "&deg;";
 } //end if
 }; //end function
+
+loadWeather();
