@@ -7,7 +7,7 @@ var cObj;
 var fObj;
 
 // GET THE CONDITIONS
-weatherConditions.open('GET', 'http://api.openweathermap.org/data/2.5/weather?zip=84653,us&appid=9e5934632d7f34dcb20cc9a5ea15543d', true);
+weatherConditions.open('GET', 'https://api.openweathermap.org/data/2.5/weather?zip=84653,us&appid=9e5934632d7f34dcb20cc9a5ea15543d', true);
 weatherConditions.responseType = 'text';
 weatherConditions.send(null);
 
