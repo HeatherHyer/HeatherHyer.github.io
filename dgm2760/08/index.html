@@ -7,7 +7,7 @@
 	<title id="title">08 Grant's Tomb</title>
 </head>
 
-<body>
+<body onload="answer.display()">
 	<div id="wrapper">
 		<header>
 			<h1>Grant's Tomb</h1>
@@ -28,11 +28,11 @@
 			</div>
 
 			<h1>The Question of the Day</h1>
-			<div class="question">Who is buried in Grant's tomb?</div>
-			<button onclick="answer.check(1)">Tom</button>
-			<button onclick="answer.check(2)">Grant</button>
-			<button onclick="answer.check(3)">Sally</button>
-			<button onclick="answer.check(4)">Jordan</button>
+			<div id="question"></div>
+			<button id="answerOne" onclick="answer.check(answerOne)"></button>
+			<button id="answerTwo" onclick="answer.check(answerTwo)"></button>
+			<button id="answerThree" onclick="answer.check(answerThree)"></button>
+			<button id="answerFour" onclick="answer.check(answerFour)"></button>
 
 			<div id="message"></div>
 

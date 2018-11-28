@@ -103,7 +103,7 @@ button {
 span.changed {
   color: #da6262;
 }
-div.question {
+div#question {
   background-color: #8e7d75;
   width: 750px;
   padding: 2%;
