@@ -35,7 +35,7 @@
           <div class="form-group">
             <button class="btn" id="addLib">Compare Another Library</button>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" id="submit">Submit</button>
         </form>
       </div>
     </main>
@@ -54,6 +54,19 @@
     $('#libs').append('<div class="form-group"><label for="lib' + num + '">Library ' + num + '</label><input type="text" class="form-control" id="lib' + num + '" name="lib' + num + '" value="' + val + '""></div>');
   }
 
+	function parseUrl() {
+		var curUrl = location.href;
+		var qStr = curUrl.split('?');
+		if (qStr[1] != "") {
+			var libs = qStr[1].split("&");
+			for (var i = 0; i < libs.length; i++) {
+				var lib = libs[i].split("=");
+				libs[i] = lib[1];
+			}
+		}
+		return libs;
+	}
+
   $(document).ready(function() {
     var num = 3;
     $('#addLib').click(function() {
@@ -61,6 +74,17 @@
       addLib(num, "");
       num++;
     });
+
+		const libs = parseUrl();
+		if (libs.length >= 2) {
+			$('#lib1').attr("value", libs[0]);
+			$('#lib2').attr("value", libs[1]);
+			if (libs.length > 2) {
+				for (var i = 3; i <= libs.length; i++) {
+					addLib(i, libs[i-1]);
+				}
+			}
+		}
 
   });
 </script>
