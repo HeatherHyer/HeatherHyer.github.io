@@ -7,40 +7,44 @@
 </head>
 
 <body>
-  <div class="row"><br></div>
-  <div class="row">
-    <div class="col-1"></div>
-    <header>
-      <h1>JavaScript Library Scoring</h1>
-    </header>
-    <div class="col-1"></div>
-  </div>
-  <div class="row"><br></div>
+	<div class="container">
+		<div class="row"><br></div>
+		<div class="row">
+			<div class="col-1"></div>
+			<header>
+				<h1>JavaScript Library Scoring</h1>
+			</header>
+			<div class="col-1"></div>
+		</div>
+		<div class="row"><br></div>
 
-  <div class="row">
-    <div class="col-1"></div>
-    <main>
-      <div class="col">
-        <form action="" method="GET">
-          <div id="libs">
-            <div class="form-group">
-              <label for="lib1">Library 1</label>
-              <input type="text" class="form-control" id="lib1" name="lib1">
-            </div>
-            <div class="form-group">
-              <label for="lib2">Library 2</label>
-              <input type="text" class="form-control" id="lib2" name="lib2">
-            </div>
-          </div>
-          <div class="form-group">
-            <button class="btn" id="addLib">Compare Another Library</button>
-          </div>
-          <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-        </form>
-      </div>
-    </main>
-    <div class="col-1"></div>
-  </div>
+		<div class="row">
+			<div class="col-1"></div>
+			<main>
+				<div class="col">
+					<form action="" method="GET">
+						<div id="libs">
+							<div class="form-group">
+								<label for="lib1">Library 1</label>
+								<input type="text" class="form-control" id="lib1" name="lib1">
+							</div>
+							<div class="form-group">
+								<label for="lib2">Library 2</label>
+								<input type="text" class="form-control" id="lib2" name="lib2">
+							</div>
+						</div>
+						<div class="form-group">
+							<button class="btn" id="addLib">Compare Another Library</button>
+						</div>
+						<button type="submit" class="btn btn-primary" id="submit">Submit</button>
+					</form>
+				</div>
+				<div class="col" id="scores"><br><br></div>
+			</main>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
 
 
 
@@ -83,6 +87,21 @@
 				for (var i = 3; i <= libs.length; i++) {
 					addLib(i, libs[i-1]);
 				}
+			}
+		}
+
+		if (libs.length > 0) {
+			$('#scores').append('<h1>Scores</h1><br>');
+			for (var i = 0; i < libs.length; i++) {
+				var libUrl = 'https://api.npms.io/v2/package/' + libs[i];
+				$.getJSON(libUrl, function(data) {
+			    lib =  data;
+					$('#scores').append('<ul id=' + lib.collected.metadata.name + '><h3>' + lib.collected.metadata.name + '</h3></ul>');
+					$('#' + lib.collected.metadata.name).append('<li>Final: ' + (lib.score.final * 100).toFixed(0) + '%' + '</li>');
+					$('#' + lib.collected.metadata.name).append('<li>Quality: ' + (lib.score.detail.quality * 100).toFixed(0) + '%' + '</li>');
+					$('#' + lib.collected.metadata.name).append('<li>Popularity: ' + (lib.score.detail.popularity * 100).toFixed(0) + '%' + '</li>');
+					$('#' + lib.collected.metadata.name).append('<li>Maintenance: ' + (lib.score.detail.maintenance * 100).toFixed(0) + '%' + '</li><br>');
+			  });
 			}
 		}
 
