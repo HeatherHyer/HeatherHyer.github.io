@@ -37,43 +37,36 @@
 					</nav>
 				</header>
 
-				<section id="main" class="container">
-					<div class="box">
-						<span class="image featured"><img src="images/work_in_progress.gif" alt="" /></span>
-					</div>
-				</section>
-
 			<!-- Main -->
-				<!--<section id="main" class="container medium">
+				<section id="main" class="container medium">
 					<header>
-						<h2>Contact Us</h2>
-						<p>Tell us what you think about our little operation.</p>
+						<h2>Request References</h2>
+						<p>I have both personal and professional references available upon request.</p>
 					</header>
 					<div class="box">
-						<form method="post" action="#">
+						<form id="requestForm"method="post">
 							<div class="row gtr-50 gtr-uniform">
 								<div class="col-6 col-12-mobilep">
-									<input type="text" name="name" id="name" value="" placeholder="Name" />
+									<input type="text" name="name" id="rname" value="" placeholder="Name" />
 								</div>
 								<div class="col-6 col-12-mobilep">
-									<input type="email" name="email" id="email" value="" placeholder="Email" />
+									<input type="text" name="email" id="remail" value="" placeholder="Email" />
 								</div>
 								<div class="col-12">
-									<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
+									<input type="text" name="company" id="rcompany" value="" placeholder="Company" />
 								</div>
 								<div class="col-12">
-									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+									<textarea name="message" id="rcomment" placeholder="Enter your message" rows="6"></textarea>
 								</div>
 								<div class="col-12">
 									<ul class="actions special">
-										<li><input type="submit" value="Send Message" /></li>
+										<li><input type="submit" value="Submit Request" id="submitRequest"/></li>
 									</ul>
 								</div>
 							</div>
 						</form>
 					</div>
 				</section>
-			-->
 
 			<!-- Footer -->
 				<footer id="footer">
@@ -96,12 +89,36 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<!--<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>-->
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			var submit = document.getElementById('submitRequest');
+			var requestForm = document.getElementById('requestForm');
+			submit.onclick = function() {
+			  const mailto = "mailto:heatherahyer@gmail.com";
+			  const subject = "?subject=Request%20For%20References";
+			  const rname = document.getElementById('rname').value;
+			  const rcompany = document.getElementById('rcompany').value;
+			  const remail = document.getElementById('remail').value;
+			  const rcomment = document.getElementById('rcomment').value;
+			  var body = "&body=" + "Requested by " + rname + "%0A%0A" + "Send to: " + remail;
+			  if (rcompany != "" || rcomment != "") {
+			    body = "&body=" + "Requested by " + rname + " from " + rcompany + "%0A%0A" + "Send to: " + remail + "%0A%0A" + "Comments:" + "%0A" + rcomment;
+			  }
+			  else if (rcompany != "") {
+			    body = "&body=" + "Requested by " + rname + " from " + rcompany + "%0A%0A" + "Send to: " + remail;
+			  }
+			  else if (rcomment != "") {
+			    body = "&body=" + "Requested by " + rname + "%0A%0A" + "Send to: " + remail + "%0A%0A" + "Comments:" + "%0A" + rcomment;
+			  }
+			  const content = mailto + subject + body
+			  requestForm.action = content;
+			}
+			</script>
 
 	</body>
 </html>
