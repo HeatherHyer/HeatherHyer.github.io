@@ -1,67 +1,144 @@
-<!doctype html>
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-	<meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Dancing+Script" rel="stylesheet">
-	<link href="main.css" rel="stylesheet" type="text/css">
-	<title>Heather Hyer</title>
-</head>
+	<head>
+		<title>Heather Hyer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="landing is-preload">
+		<div id="page-wrapper">
 
-<body>
-	<div id="wrapper">
-    <header class="header-container">
-        <h1>Heather Hyer</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../dgm2120/index.html">DGM 2120</a></li>
-                <li><a href="../dgm2760/index.html">DGM 2760</a></li>
-								<li><a href="../cs2550/index.html">CS 2550</a></li>
-                <li><a class="active">Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>
+			<!-- Header -->
+				<header id="header" class="alt">
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
+							<li>
+									<a href="projects.html">Projects</a>
+									<ul>
+										<li><a href="websites.html">Websites</a></li>
+										<li><a href="frameworks.html">Frameworks</a></li>
+										<li><a href="ux.html">UX Design</a></li>
+										<li><a href="se.html">Software Engineering</a></li>
+									</ul>
+								</a>
+							</li>
+							<li><a href="contact.html">Contact Info</a></li>
+							<li><a href="requestForm.html">Request References</a></li>
+							<li><a href="recommedations.html">Letters of Recommendation</a></li>
+						</ul>
+					</nav>
+				</header>
 
-    <main>
-			<div class="content">
-				<button class="image" id="resume" onclick="location.href='resume.pdf'">View<br> Resume</button>
-				<button class="image" id="references" onclick="displayModal('references')">Request References</button>
-				<button class="image" id="linkedin" onclick="location.href='https://www.linkedin.com/in/heather-hyer-55b293139/'">View<br>LinkedIn<br>Profile</button>
-				<button class="image" id="letters" onclick="displayModal('letters')">View Letters of Recommendation</button>
-			</div>
-		</main>
+			<!-- Banner -->
+				<section id="banner">
+					<h2>Heather Hyer</h2>
+					<p>Web Deveoper. QA Specialist. Software Engineer.</p>
+					<ul class="actions special">
+						<li><a href="assets/resume.pdf" target="_blank" class="button primary">View Resume</a></li>
+						<li><a href="projects.html" class="button">Explore Projects</a></li>
+					</ul>
+				</section>
 
-		<div id="referencesModal" class="modal">
-		  <div class="modal-content">
-			<form id="requestForm" method="post">
-				<span class="close" onclick="closeModal('references')">&times;</span>
-				<h1>Request References</h1>
-				<br>Name:<br>
-				<input type="text" id="rname" required><br><br>
-				Company:<br>
-				<input type="text" id="rcompany"><br><br>
-				E-mail:<br>
-				<input type="text" id="remail" required><br><br>
-				Comment:<br>
-				<textarea id="rcomment"></textarea><br><br>
-				<button type="submit" id="submitRequest">Submit Request</button>
-			</form>
-		  </div>
+			<!-- Main -->
+				<section id="main" class="container">
+
+					<section class="box special">
+						<header class="major">
+							<h2>Welcome to my portfolio!</h2><hr>
+						</header>
+					</section>
+
+					<section class="box special features">
+						<div class="features-row">
+							<section>
+									<span class="icon major fa-bolt accent2"></span>
+								<a class="clickable" href="assets/resume.pdf" target="_blank">
+									<h3>View Resume</h3>
+								</a>
+							</section>
+							<section>
+									<span class="icon major fa-area-chart accent3"></span>
+								<a class="clickable" href="projects.html">
+									<h3>Explore Projects</h3>
+								</a>
+								<p>View my websites and framework expolation.<br> Browse my UX and Software Engineering projects.</p>
+							</section>
+						</div>
+						<div class="features-row">
+							<section>
+									<span class="icon major fa-cloud accent4"></span>
+									<a class="clickable" href="recommendations.html">
+									<h3>View Letters of Recommendation</h3>
+								</a>
+							</section>
+							<section>
+									<span class="icon major fa-lock accent5"></span>
+									<a class="clickable" href="requestForm.html">
+									<h3>Request References</h3>
+								</a>
+								<p>I have both professional and personal references available upon request.</p>
+							</section>
+						</div>
+					</section>
+
+
+							<section class="box special">
+									<span class="image featured"><img src="images/linkedin_profile.PNG" alt="" /></span>
+									<hr>
+									<h3>Connect on LinkedIn</h3>
+									<ul class="actions special">
+										<li><a href="https://www.linkedin.com/in/heather-hyer-55b293139/" class="button alt">View Profile</a></li>
+									</ul>
+							</section>
+
+				</section>
+
+			<!-- CTA -->
+				<section id="cta">
+
+					<h2>Contact Me</h2>
+					<ul>
+						<li>Phone Number: (385) 254-4874</li>
+						<li>Email: heatherahyer@gmail.com</li>
+					</ul>
+
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<!--<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+					</ul>-->
+					<ul class="copyright">
+						<li>Heather Hyer's Portfolio</li>
+						<li>Updated 2/27/19</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
 		</div>
 
-		<div id="lettersModal" class="modal">
-		  <div class="modal-content" id="lettersModalContent">
-				<span class="close" onclick="closeModal('letters')">&times;</span>
-				<h1>View Letters of Recommendation</h1>
-				<button class="regular" onclick="location.href='letters/brady_rogers.pdf'">Brady Rogers – Internship Mentor</button>
-				<button class="regular" onclick="location.href='letters/david_wagstaff.pdf'">David Wagstaff – Professor</button>
-		  </div>
-		</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-	</div>
-</body>
-<footer>
-	<h3>Last Updated 9/17/18 by Heather Hyer</h3>
-</footer>
-<script type="text/javascript" src="main.js"></script>
+	</body>
 </html>
