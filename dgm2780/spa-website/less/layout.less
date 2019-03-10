@@ -1,0 +1,61 @@
+@import "mixins.less";
+@import "variables.less";
+
+.row {
+  .layout(center, center);
+  padding: 2rem 0 0 0;
+}
+
+.nav {
+  .layout(center, space-between);
+}
+
+.nav, .nav2 {
+  padding: 1rem 0 2rem 0;
+
+  a {
+    margin: 2rem;
+    cursor: pointer;
+    color: @dark;
+  }
+
+  a:hover {
+    color: @accentLight;
+  }
+}
+
+.nav2 {
+  .layout(flex-start, flex-start);
+}
+
+.box1 {
+  .layout(center, flex-start);
+  flex-direction: column;
+  padding: 5%;
+}
+
+.box2 {
+  .layout(space-between, center);
+  padding: 5%;
+  flex-wrap: wrap;
+}
+
+.smallbox {
+  width: 250px;
+  .layout(flex-start, flex-start);
+  flex-direction: column;
+  margin: 1rem;
+}
+
+footer {
+  background: @dark;
+  color: white;
+  padding: 3rem;
+
+  .cols {
+    .layout(flex-start, flex-start);
+  }
+  p {
+    margin: 1rem;
+  }
+}

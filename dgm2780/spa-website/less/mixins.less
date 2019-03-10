@@ -1,0 +1,23 @@
+@import "variables.less";
+
+.custom-btn(@btn-width, @btn-height, @font-size){
+  width: @btn-width;
+  height: @btn-height;
+  font-size: @font-size;
+  font-family: @font;
+  background: @accentLight;
+  color: @base-color;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    background: @accentDark;
+    color: @base-color;
+  }
+}
+
+.layout(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
