@@ -1,0 +1,66 @@
+.clear {
+  clear: both; }
+
+nav {
+  float: left;
+  color: #FF0000;
+  font-family: Helvetica, sans-serif; }
+  nav ul li ul.sub-nav {
+    display: none; }
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: red; }
+
+.box2 {
+  width: 200px;
+  height: 200px;
+  background: gray; }
+
+/*# sourceMappingURL=main.css.map */
+
+.mainHeader {
+  background-image: url(../images/homeBook.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 500px;
+}
+
+.contactHeader {
+  background-image: url(../images/homeBook.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-height: 275px;
+}
+
+.homePic2 {
+  background-image: url(../images/phone.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.jumbotron-fluid {
+  width: 100%;
+}
+
+a {
+  color: black;
+}
+
+.grayBar {
+  background: #696969;
+  color: white;
+}
+
+.homeBottom {
+  background: #17a2b8;
+  color: white;
+}
+
+.cardBtn {
+  width: 100%;
+}
