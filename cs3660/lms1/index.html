@@ -46,163 +46,170 @@
     <div class="container">
       <div class="card border-0 shadow my-5">
         <div class="card-body p-5">
-          <h1 class="font-weight-light">Teams</h1>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">League</th>
-                  <th scope="col">Coach</th>
-                  <th scope="col">Admin</th>
-                  <th scope="col">Phone</th>
-                  <th scope="col">Players</th>
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-toggle="tooltip" data-placement="bottom" title="More information on the Goldfish team" id="goldfish">
-                  <th scope="row">1</th>
-                  <td>Goldfish</td>
-                  <td>Girls 5-10</td>
-                  <td>Nelson Mandela</td>
-                  <td>Grant Feldman</td>
-                  <td>(801) 555-1245</td>
-                  <td>15</td>
-                  <td style="color: #3b4e94;">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt" onclick="deleteRow('goldfish')"
-                    data-toggle="modal"
-                    data-target="#deleteModal"></i>
-                    <a tabindex="0"
-                    role="button"
-                    data-toggle="popover"
-                    data-trigger="focus"
-                    title="<i class='fas fa-fish'></i> Goldfish Team"
-                    data-content="Some basic information about the team"
-                    data-html="true">
-                    <i class="fas fa-question-circle"
-                    ></i></a>
-                  </td>
-                </tr>
-                <tr  data-toggle="tooltip" data-placement="bottom" title="More information on the Starlings team" id="starlings">
-                  <th scope="row">2</th>
-                  <td>Starlings</td>
-                  <td>Boys 8-12</td>
-                  <td>George Kastanza</td>
-                  <td>Nathan Alvarez</td>
-                  <td>(224) 124-7998</td>
-                  <td>12</td>
-                  <td style="color: #3b4e94;">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt" onclick="deleteRow('starlings')"
-                    data-toggle="modal"
-                    data-target="#deleteModal"></i>
-                    <a tabindex="0"
-                    role="button"
-                    data-toggle="popover"
-                    data-trigger="focus"
-                    title="<i class='fas fa-crow'></i> Starlings Team"
-                    data-content="Some basic information about the team"
-                    data-html="true">
-                    <i class="fas fa-question-circle"
-                    ></i></a>                  </td>
-                </tr>
-                <tr  data-toggle="tooltip" data-placement="bottom" title="More information on the Jaguars team" id="jaguars">
-                  <th scope="row">3</th>
-                  <td>Jaguars</td>
-                  <td>Boys 12-16</td>
-                  <td>Jose Martinez</td>
-                  <td>Mary Johnson</td>
-                  <td>(122) 333-4444</td>
-                  <td>17</td>
-                  <td style="color: #3b4e94;">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt" onclick="deleteRow('jaguars')"
-                    data-toggle="modal"
-                    data-target="#deleteModal"></i>
-                    <a tabindex="0"
-                    role="button"
-                    data-toggle="popover"
-                    data-trigger="focus"
-                    title="<i class='fas fa-cat'></i> Jaguars Team"
-                    data-content="Some basic information about the team"
-                    data-html="true">
-                    <i class="fas fa-question-circle"
-                    ></i></a>                  </td>
-                </tr>
-                <tr data-toggle="tooltip" data-placement="bottom" title="More information on the Bruins team" id="bruins">
-                  <th scope="row">4</th>
-                  <td>Bruins</td>
-                  <td>Boys 5-10</td>
-                  <td>Nelson Mandela</td>
-                  <td>Grant Feldman</td>
-                  <td>(801) 555-1245</td>
-                  <td>14</td>
-                  <td style="color: #3b4e94;">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt" onclick="deleteRow('bruins')"
-                    data-toggle="modal"
-                    data-target="#deleteModal"></i>
-                    <a tabindex="0"
-                    role="button"
-                    data-toggle="popover"
-                    data-trigger="focus"
-                    title="<i class='fas fa-paw'></i> Bruins Team"
-                    data-content="Some basic information about the team"
-                    data-html="true">
-                    <i class="fas fa-question-circle"
-                    ></i></a>                  </td>
-                </tr>
-                <tr  data-toggle="tooltip" data-placement="bottom" title="More information on the Bullfrogs team" id="bullfrogs">
-                  <th scope="row">5</th>
-                  <td>Bullfrogs</td>
-                  <td>Girls 8-12</td>
-                  <td>George Kastanza</td>
-                  <td>Nathan Alvarez</td>
-                  <td>(224) 124-7998</td>
-                  <td>17</td>
-                  <td style="color: #3b4e94;">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt" onclick="deleteRow('bullfrogs')"
-                    data-toggle="modal"
-                    data-target="#deleteModal"></i>
-                    <a tabindex="0"
-                    role="button"
-                    data-toggle="popover"
-                    data-trigger="focus"
-                    title="<i class='fas fa-frog'></i> Bullfrogs Team"
-                    data-content="Some basic information about the team"
-                    data-html="true">
-                    <i class="fas fa-question-circle"
-                    ></i></a>                  </td>
-                </tr>
-                <tr  data-toggle="tooltip" data-placement="bottom" title="More information on the Mustangs team" id="mustangs">
-                  <th scope="row">6</th>
-                  <td>Mustangs</td>
-                  <td>Boys 12-16</td>
-                  <td>Jose Martinez</td>
-                  <td>Mary Johnson</td>
-                  <td>(122) 333-4444</td>
-                  <td>13</td>
-                  <td style="color: #3b4e94;">
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt" onclick="deleteRow('mustangs')"
-                    data-toggle="modal"
-                    data-target="#deleteModal"></i>
-                    <a tabindex="0"
-                    role="button"
-                    data-toggle="popover"
-                    data-trigger="focus"
-                    title="<i class='fas fa-horse-head'></i> Mustangs Team"
-                    data-content="Some basic information about the team"
-                    data-html="true">
-                    <i class="fas fa-question-circle"
-                    ></i></a>                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="row">
+            <aside class="col-1">
+              <img src="images/lmsLogoWhite.png" alt="logo white" style="width: 50px;">
+            </aside>
+            <div class="col-11">
+              <h1 class="font-weight-light">Teams</h1>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">League</th>
+                      <th scope="col">Coach</th>
+                      <th scope="col">Admin</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Players</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-toggle="tooltip" data-placement="bottom" title="More information on the Goldfish team" id="goldfish">
+                      <th scope="row">1</th>
+                      <td>Goldfish</td>
+                      <td>Girls 5-10</td>
+                      <td>Nelson Mandela</td>
+                      <td>Grant Feldman</td>
+                      <td>(801) 555-1245</td>
+                      <td>15</td>
+                      <td style="color: #3b4e94;">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt" onclick="deleteRow('goldfish')"
+                        data-toggle="modal"
+                        data-target="#deleteModal"></i>
+                        <a tabindex="0"
+                        role="button"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        title="<i class='fas fa-fish'></i> Goldfish Team"
+                        data-content="Some basic information about the team"
+                        data-html="true">
+                        <i class="fas fa-question-circle"
+                        ></i></a>
+                      </td>
+                    </tr>
+                    <tr  data-toggle="tooltip" data-placement="bottom" title="More information on the Starlings team" id="starlings">
+                      <th scope="row">2</th>
+                      <td>Starlings</td>
+                      <td>Boys 8-12</td>
+                      <td>George Kastanza</td>
+                      <td>Nathan Alvarez</td>
+                      <td>(224) 124-7998</td>
+                      <td>12</td>
+                      <td style="color: #3b4e94;">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt" onclick="deleteRow('starlings')"
+                        data-toggle="modal"
+                        data-target="#deleteModal"></i>
+                        <a tabindex="0"
+                        role="button"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        title="<i class='fas fa-crow'></i> Starlings Team"
+                        data-content="Some basic information about the team"
+                        data-html="true">
+                        <i class="fas fa-question-circle"
+                        ></i></a>                  </td>
+                    </tr>
+                    <tr  data-toggle="tooltip" data-placement="bottom" title="More information on the Jaguars team" id="jaguars">
+                      <th scope="row">3</th>
+                      <td>Jaguars</td>
+                      <td>Boys 12-16</td>
+                      <td>Jose Martinez</td>
+                      <td>Mary Johnson</td>
+                      <td>(122) 333-4444</td>
+                      <td>17</td>
+                      <td style="color: #3b4e94;">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt" onclick="deleteRow('jaguars')"
+                        data-toggle="modal"
+                        data-target="#deleteModal"></i>
+                        <a tabindex="0"
+                        role="button"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        title="<i class='fas fa-cat'></i> Jaguars Team"
+                        data-content="Some basic information about the team"
+                        data-html="true">
+                        <i class="fas fa-question-circle"
+                        ></i></a>                  </td>
+                    </tr>
+                    <tr data-toggle="tooltip" data-placement="bottom" title="More information on the Bruins team" id="bruins">
+                      <th scope="row">4</th>
+                      <td>Bruins</td>
+                      <td>Boys 5-10</td>
+                      <td>Nelson Mandela</td>
+                      <td>Grant Feldman</td>
+                      <td>(801) 555-1245</td>
+                      <td>14</td>
+                      <td style="color: #3b4e94;">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt" onclick="deleteRow('bruins')"
+                        data-toggle="modal"
+                        data-target="#deleteModal"></i>
+                        <a tabindex="0"
+                        role="button"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        title="<i class='fas fa-paw'></i> Bruins Team"
+                        data-content="Some basic information about the team"
+                        data-html="true">
+                        <i class="fas fa-question-circle"
+                        ></i></a>                  </td>
+                    </tr>
+                    <tr  data-toggle="tooltip" data-placement="bottom" title="More information on the Bullfrogs team" id="bullfrogs">
+                      <th scope="row">5</th>
+                      <td>Bullfrogs</td>
+                      <td>Girls 8-12</td>
+                      <td>George Kastanza</td>
+                      <td>Nathan Alvarez</td>
+                      <td>(224) 124-7998</td>
+                      <td>17</td>
+                      <td style="color: #3b4e94;">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt" onclick="deleteRow('bullfrogs')"
+                        data-toggle="modal"
+                        data-target="#deleteModal"></i>
+                        <a tabindex="0"
+                        role="button"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        title="<i class='fas fa-frog'></i> Bullfrogs Team"
+                        data-content="Some basic information about the team"
+                        data-html="true">
+                        <i class="fas fa-question-circle"
+                        ></i></a>                  </td>
+                    </tr>
+                    <tr  data-toggle="tooltip" data-placement="bottom" title="More information on the Mustangs team" id="mustangs">
+                      <th scope="row">6</th>
+                      <td>Mustangs</td>
+                      <td>Boys 12-16</td>
+                      <td>Jose Martinez</td>
+                      <td>Mary Johnson</td>
+                      <td>(122) 333-4444</td>
+                      <td>13</td>
+                      <td style="color: #3b4e94;">
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt" onclick="deleteRow('mustangs')"
+                        data-toggle="modal"
+                        data-target="#deleteModal"></i>
+                        <a tabindex="0"
+                        role="button"
+                        data-toggle="popover"
+                        data-trigger="focus"
+                        title="<i class='fas fa-horse-head'></i> Mustangs Team"
+                        data-content="Some basic information about the team"
+                        data-html="true">
+                        <i class="fas fa-question-circle"
+                        ></i></a>                  </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
