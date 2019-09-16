@@ -1,0 +1,11 @@
+#content1 {
+  width: 50%;
+  height: 500px;
+  float: left;
+}
+
+#content2 {
+  width: 50%;
+  height: 500px;
+  float: right;
+}
