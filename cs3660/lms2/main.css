@@ -1,0 +1,28 @@
+body {
+  background: url('images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+thead {
+  background-color: #3b4e94;
+  color: white;
+}
+
+a {
+  color: #3b4e94;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+aside {
+  height: auto;
+  background-color: #3b4e94;
+}
+
+@media (max-width: 992px) {
+  aside {
+    display: none;
+  }
+}
