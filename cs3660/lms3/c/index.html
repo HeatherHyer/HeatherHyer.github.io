@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Teacher Evaluation</title>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="main.css"/>
+
+</head>
+
+<body>
+<script type="text/html" id="formRenderer">
+  //create your form rendering template inline here
+
+</script>
+
+<div class="container" id="content">
+  <h1>Enter your Details</h1>
+  <form id="evalForm" >
+    <ul class="flex">
+      <li>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName">
+
+      </li>
+      <li>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" >
+      </li>
+      <li>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" >
+      </li>
+      <li>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="phone">
+      </li>
+       <li>
+         <label for="pass1">Password</label>
+         <input type="password" class="form-control" name="pass1" id="pass1" >
+        </li>
+       <li>
+         <label for="pass2">Password</label>
+         <input type="password" class="form-control" name="pass2" id="pass2"   >
+        </li>
+      <li>
+         <h2>How do you like CS3660?</h2>
+      </li>
+      <li>
+        <input type="radio" id="state-of-mind1" name='state-of-mind' value="sucky">
+        <label for="state-of-mind1">Sucky</label>
+      </li>
+      <li>
+        <input type="radio" id="state-of-mind3" name='state-of-mind' value="meh">
+        <label for="state-of-mind3">Meh</label>
+      </li>
+      <li>
+        <input type="radio" id="state-of-mind2" name='state-of-mind' value="Great!">
+        <label for="state-of-mind2">Great!</label>
+      </li>
+
+      <li>
+        <label for="professorGrade">Describe your Teacher</label>
+        <select class="form-control" name="professorGrade" id="professorGrade">
+          <option value="great">Awful</option>
+          <option value="stupendous">Bad</option>
+          <option value="fantabulous">Good</option>
+          <option value="supernice">Excellent</option>
+
+        </select>
+    </li>
+    <li>
+      <input  type="checkbox" name="honesty_check" id="honesty_check">
+        <label for="honesty_check">
+          Are you being completely honest?
+        </label>
+    </li>
+      <li>
+        <button type="submit">Send</button>
+      </li>
+    </ul>
+  </form>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+<script src="viewModel.js"></script>
+<script src="formService.js"></script>
+<script src="viewModelTest.js"></script>
+<script>
+
+   var valSvc;
+   $("document").ready(function(){
+     valSvc = new formService(viewModel,"content", "formRenderer", "evalForm", "https://wp.zybooks.com/form-viewer.php", true);
+     var field = "#state-of-mind1";
+       $(field).on("change", function(ev){
+       valSvc.change(ev);
+
+        });
+   });
+</script>
+
+
+</body>
+
+</html>

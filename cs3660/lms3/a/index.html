@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Test Storage</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+<script src="teamData.js"></script>
+<script src="storageService.js"></script>
+<script>
+   var storageSvc = new storageService(teamData,"teamData");
+
+   $("document").ready(function(){
+     storageSvc.remove(1);
+     storageSvc.size();
+       if (storageSvc.getItem(1)===null)
+        console.log("remove successfull");
+
+      storageSvc.create(
+         {
+         id: 4,
+         name:"Lions",
+         coachId: 4,
+         coachFirst: "Johnny",
+         coachLast: "Appleseed",
+         coachPhone: "801-333-4444",
+         coachEmail: "johnny.appleseed@uvu.edu",
+         coachLicenseLevel: 2,
+         league: 1,
+         division: 2
+       });
+        if (storageSvc.getItem(4).coachLast==="Appleseed")
+          console.log("Create successfull");
+        storageSvc.update({
+         id: 2,
+         name:"Killer Bunnie Rabbits",
+         coachId: 2,
+         coachFirst: "Peter",
+         coachLast: "Rabbit",
+         coachPhone: "801-444-4444",
+         coachEmail: "peter.rabbit@playboy.edu",
+         coachLicenseLevel: 1,
+         league: 2,
+         division: 2
+       });
+       if (storageSvc.getItem(2).name==="Killer Bunnie Rabbits")
+        console.log("Update successfull");
+
+      storageSvc.clear();
+      storageSvc.reset();
+       if (storageSvc.getItem(2).name==="Killer Bunnies")
+        console.log("Reset, orig data restored");
+
+      storageSvc.retrieve();
+       if (storageSvc.getItem(2).name==="Killer Bunnies")
+        console.log("Reset, orig data restored");
+
+    let leagues = storageSvc.getLookup("leagues");
+
+     if(leagues[0].label=== "League 1") {
+       console.log("Lookup list retrieved properly");
+     }
+    let list = storageSvc.list();
+
+     if(list[0].name==="Killer Bunnies") {
+       console.log("List retrieved correctly");
+     }
+
+    let teams = storageSvc.filter({coachLicenseLevel:1});
+
+     if(_.size(teams)== 2){
+       console.log("Filter returned two teams with coachLicenseLevel=1");
+     }
+     teams = storageSvc.sort(['name'],['asc']);
+
+     if(teams[0].name=== "Killer Bunnies") {
+      console.log("sorted asc, killer bunnies first");
+     }
+
+      teams = storageSvc.list();
+
+    if(teams[0].name=== "Raptors") {
+      console.log("sorted asc, orig data not changed");
+     }
+
+     storageSvc.sort(['name'],['asc'], true);  //sort permanently
+     teams = storageSvc.list();
+      if(teams[0].name=== "Killer Bunnies") {
+      console.log("sorted permanently, list returns sorted values");
+     }
+
+   });
+</script>
+
+</body>
+
+</html>
