@@ -127,3 +127,21 @@ $('input').keyup(function(event) {
   });
   renderTable(results);
 });
+
+$( document ).ready(function() {
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://teams-7ffa.restdb.io/rest/team",
+    "method": "GET",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": "df2949d941741ae2618c9fd47d077a63fcd32	",
+      "cache-control": "no-cache"
+    }
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+});
