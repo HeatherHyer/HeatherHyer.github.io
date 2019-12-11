@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8263134a27.js"></script>
+
+    <title>LMS</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="images/lmsLogo.png" alt="logo" style="width: 50px;" class="rotateIn animated"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="AppSvc.RenderPlayerListView()">Players</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="AppSvc.RenderTeamListView()">Teams</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="card border-0 shadow my-5">
+        <div class="card-body p-5">
+          <div class="row">
+            <aside class="col-1">
+              <img src="images/lmsLogoWhite.png" alt="logo white" style="width: 50px;">
+            </aside>
+            <div class="col-11">
+              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                  </thead>
+                  <tbody class="animated"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete this team?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="deleteModalBody">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="PlayerVw.DeletePlayer()">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="sticky-footer" class="py-4 bg-light">
+    <div class="container text-center">
+      <small>Copyright &copy; LMS by Heather Hyer</small>
+    </div>
+  </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"> </script>
+    <script src="AppService.js"></script>
+    <script src="RestStorageService.js"></script>
+    <script src="PlayerView.js"></script>
+    <script>
+      $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle="popover"]').popover();
+      $('.popover-dismiss').popover({
+       trigger: 'focus'
+      })
+
+      var RestSvc = new RestStorageService("http://local.api.com:8081/api/v1/", "players", "name", "desc", "", "");
+      var PlayerVw = new PlayerView(RestSvc, "", "", "", "");
+      var AppSvc = new AppService(PlayerVw, RestSvc, "", "", "");
+      $("document").ready(function(){
+      });
+    </script>
+  </body>
+</html>
