@@ -32,10 +32,10 @@ class RestStorageService {
         dataType: 'json'
       })
     }
-    create(postData) {
+    create(id, postData) {
       $.ajax({
         method: "POST",
-        url: this.apiHostUrl + this.apiType + "/" + id,
+        url: this.apiHostUrl + this.apiType,
         data: postData,
         contentType: "application/json",
         dataType: 'json'

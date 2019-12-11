@@ -23,19 +23,60 @@ class PlayerView {
           const team = player.team;
           const phone = player.phone;
           const age = player.age;
-          const row = '<tr data-toggle="tooltip" data-placement="bottom" title="More information on the ' + name + ' team" id="' + id + '"><th scope="row" style="display: none;">' + id + '</th><td>' + name + '</td><td>' + team + '</td><td>' + phone + '</td><td>' + age + '</td><td style="color: #3b4e94;"><i class="fas fa-edit"></i><i class="fas fa-trash-alt" data-toggle="modal" data-target="#deleteModal" onclick="localStorage.setItem(\'toDelete\', ' + id + ');"></i><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="' + id + ' Team" data-content="Some basic information about the team" data-html="true"><i class="fas fa-question-circle"></i></a></td></tr>';
+          const row = '<tr data-toggle="tooltip" data-placement="bottom" title="More information on the ' + name + ' team" id="' + id + '"><th scope="row" style="display: none;">' + id + '</th><td>' + name + '</td><td>' + team + '</td><td>' + phone + '</td><td>' + age + '</td><td style="color: #3b4e94;"><i class="fas fa-edit" data-toggle="modal" data-target="#editForm" onclick="PlayerVw.EditPlayer(' + id + ');"></i><i class="fas fa-trash-alt" data-toggle="modal" data-target="#deleteModal" onclick="localStorage.setItem(\'toDelete\', ' + id + ');"></i><a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="' + id + ' Team" data-content="Some basic information about the team" data-html="true"><i class="fas fa-question-circle"></i></a></td></tr>';
           body.append(row);
         }
       });
     }
     EditPlayer(id) {
+      localStorage.setItem("toEdit", id);
+      let idField = document.getElementById("idField");
+      let nameField = document.getElementById("nameField");
+      let teamField = document.getElementById("teamField");
+      let phoneField = document.getElementById("phoneField");
+      let ageField = document.getElementById("ageField");
       if (id) {
-
+        this.storageService.get(id).done(function( response) {
+            idField.value = response[0].id;
+            nameField.value = response[0].name;
+            teamField.value = response[0].team;
+            phoneField.value = response[0].phone;
+            ageField.value = response[0].age;
+        });
       }
       else {
-
+        idField.value = "";
+        nameField.value = "";
+        teamField.value = "";
+        phoneField.value = "";
+        ageField.value = "";
+        localStorage.setItem("toEdit", "");
       }
+      this.RenderPlayerList();
+    }
+    SubmitEdit(id) {
+      let idField = document.getElementById("idField");
+      let nameField = document.getElementById("nameField");
+      let teamField = document.getElementById("teamField");
+      let phoneField = document.getElementById("phoneField");
+      let ageField = document.getElementById("ageField");
 
+      const values = {
+        "id": idField.value,
+        "name": nameField.value,
+        "team": teamField.value,
+        "phone": phoneField.value,
+        "age": ageField.value
+      };
+
+      if (id) {
+        this.storageService.update(id, JSON.stringify(values));
+        this.RenderPlayerList();
+      }
+      else {
+        this.storageService.create(idField.value, JSON.stringify(values));
+        this.RenderPlayerList();
+      }
     }
     DeletePlayer() {
         this.storageService.delete(localStorage.getItem("toDelete"));

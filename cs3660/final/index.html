@@ -49,7 +49,8 @@
               <img src="images/lmsLogoWhite.png" alt="logo white" style="width: 50px;">
             </aside>
             <div class="col-11">
-              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+              <input id="searchBar" class="form-control" type="text" placeholder="Search" aria-label="Search">
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#editForm" onclick="PlayerVw.EditPlayer()"><i class="fas fa-user-plus"></i></button>
               <div class="table-responsive">
                 <table class="table table-striped">
                   <thead>
@@ -72,9 +73,6 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" id="deleteModalBody">
-
-          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="PlayerVw.DeletePlayer()">Yes</button>
@@ -83,11 +81,53 @@
       </div>
     </div>
 
-    <footer id="sticky-footer" class="py-4 bg-light">
-    <div class="container text-center">
-      <small>Copyright &copy; LMS by Heather Hyer</small>
+    <div class="modal fade" id="editForm" tabindex="-1" role="dialog" aria-labelledby="editForm" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Player</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="needs-validation" novalidate>
+              <div class="form-group">
+                <label for="idField" class="col-form-label">Id</label>
+                <input type="text" class="form-control" id="idField" required>
+                <div class="invalid-feedback">
+                  Please enter an id.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="nameField" class="col-form-label">Name</label>
+                <input type="text" class="form-control" id="nameField" required>
+                <div class="invalid-feedback">
+                  Please enter a name.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="teamField" class="col-form-label">Team</label>
+                <input type="text" class="form-control" id="teamField">
+              </div>
+              <div class="form-group">
+                <label for="phoneField" class="col-form-label">Phone</label>
+                <input type="text" class="form-control" id="phoneField" pattern="^[0-9]{10}$" required>
+                <div class="invalid-feedback">
+                  Please enter a valid phone number.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="ageField" class="col-form-label">Age</label>
+                <input type="text" class="form-control" id="ageField">
+              </div>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" id="submitBtn" onclick="PlayerVw.SubmitEdit(localStorage.getItem('toEdit'))">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -109,6 +149,19 @@
       var PlayerVw = new PlayerView(RestSvc, "", "", "", "");
       var AppSvc = new AppService(PlayerVw, RestSvc, "", "", "");
       $("document").ready(function(){
+        AppSvc.RenderPlayerListView();
+
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
       });
     </script>
   </body>

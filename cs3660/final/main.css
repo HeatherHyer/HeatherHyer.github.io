@@ -12,6 +12,15 @@ thead {
   margin-bottom: 20px;
 }
 
+#searchBar {
+  width: 80%;
+  display: inline;
+}
+
+form {
+  margin: 20px;
+}
+
 a {
   color: #3b4e94;
 }
