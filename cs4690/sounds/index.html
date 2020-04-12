@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sounds</title>
+  </head>
+  <body>
+    <button onclick="win()">Win</button>
+    <button onclick="lose()">Lose</button>
+
+    <script type="text/javascript">
+      function win() {
+        var win = new Audio("win.mp3");
+        win.play();
+        win.currentTime=0;
+      }
+
+      function lose() {
+        var lose = new Audio("lose.mp3");
+        lose.play();
+        lose.currentTime=0;
+      }
+    </script>
+  </body>
+</html>

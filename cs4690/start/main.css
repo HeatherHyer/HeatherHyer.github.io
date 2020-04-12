@@ -1,0 +1,18 @@
+body {
+  background-color: #275D38;
+  color: white;
+  margin: 10%;
+}
+
+h1 {
+  margin-bottom: 50px;
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+button {
+  width: 100%;
+}
